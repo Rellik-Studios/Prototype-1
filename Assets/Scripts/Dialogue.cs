@@ -17,7 +17,6 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private TMP_Text m_textBox;
 
-    [SerializeField] private playerMovement m_player;
 
     [SerializeField] private List<ListWrapper> m_dialogues = new List<ListWrapper>();
     private bool m_canProceed = true;
@@ -27,18 +26,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private AudioSource m_dialogueProceed;
     //private bool m_moveTextForward;
 
-    public bool m_playing
-    {
-        get
-        {
-            return m_player.m_cutscenePlayin;
-        }
-        set
-        {
-            m_player.m_cutscenePlayin = value;
-           // m_playing = value;
-        }
-    }
+    public bool m_playing;
 
 
     public int m_pointer { get; set; }
