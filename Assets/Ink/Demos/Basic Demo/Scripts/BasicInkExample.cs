@@ -2,19 +2,37 @@
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour
 {
+	
 	public static event Action<Story> OnCreateStory;
 
 	[SerializeField] private TMP_Text textBox;
 	[SerializeField] private GameObject choices;
 
+	[SerializeField] private List<AudioClip> audioClips;
+	private AudioSource audioSource;
+
+	private Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
+	private void Start()
+	{
+		
+	}
+
 	void Awake()
 	{
+		audioSource = GetComponent<AudioSource>();
+
+		foreach (var clip in audioClips)
+		{
+			clips.Add(clip.name.ToLower(), clip);
+		}
+		
 		// Remove the default message
 		RemoveChildren();
 		StartStory();
@@ -46,10 +64,17 @@ public class BasicInkExample : MonoBehaviour
 	while (story.canContinue)
 		{
 			// Continue gets the next line of the story
-			while (isPlaying)
+			while (audioSource.isPlaying)
 			{
 				yield return null;
 			}
+
+			while (!canProceed)
+			{
+				yield return null;
+			}
+
+			
 
 			string text = story.Continue();
 			// This removes any white space from the text.
@@ -57,6 +82,7 @@ public class BasicInkExample : MonoBehaviour
 			
 			// Display the text on screen!
 			CreateContentView(text);
+			canProceed = false;
 		}
 
 		// Display all the choices, if there are any!
@@ -99,10 +125,20 @@ public class BasicInkExample : MonoBehaviour
 				characterText.text = tag.Substring("Character.".Length, tag.Length - "Character.".Length);
 				Debug.Log(characterText.text);
 			}
+			
+			if (tag.StartsWith("Clip."))
+			{
+				var clipName = tag.Substring("Clip.".Length, tag.Length - "Clip.".Length).ToLower();
+				clips.TryGetValue(clipName, out AudioClip clip);
+				audioSource.PlayOneShot(clip);
+				Debug.Log(characterText.text);
+			}
+
+			
 		}
 		StartCoroutine(TypeSentence(text));
 		Text storyText = Instantiate(textPrefab) as Text;
-		storyText.text = text;
+		//storyText.text = text;
 		storyText.transform.SetParent(canvas.transform, true);
 		
 		
@@ -163,6 +199,14 @@ void isPlayingFalse()
 		}
 	}
 
+	private void Update()
+	{
+		if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
+		{
+			canProceed = true;
+		}
+	}
+
 	[SerializeField]
 	private TextAsset inkJSONAsset = null;
 	public Story story;
@@ -178,4 +222,6 @@ void isPlayingFalse()
 
 	private bool isPlaying = false;
 	[SerializeField] private TMP_Text characterText;
+	private bool canProceed = true;
+	
 }
