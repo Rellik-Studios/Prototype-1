@@ -3,12 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="f4a7d29d-406c-4a61-b435-c6be08b56028" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Basic Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Basic Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Ink/story.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Ink/story.ink" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Ink/story.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Ink/story.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Scripts/BasicInkExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Scripts/BasicInkExample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InkSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InkSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/HuhYouAreTheYoungUnderdogThatTheyHaveBeenTalkingAbout.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/HuhYouAreTheYoungUnderdogThatTheyHaveBeenTalkingAbout.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/ItWasYou.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/ItWasYou.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/NoThatsWrong.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/NoThatsWrong.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/YesYesIAm.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/YesYesIAm.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +54,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.24828114" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.248104" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -87,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627511679645</updated>
       <workItem from="1627511686522" duration="6097000" />
-      <workItem from="1627527127343" duration="2886000" />
+      <workItem from="1627527127343" duration="4976000" />
     </task>
     <servers />
   </component>
@@ -98,24 +104,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Scripts/BasicInkExample.cs</url>
-          <line>84</line>
-          <properties documentPath="D:\Repos\Prototype-1\Assets\Ink\Demos\Basic Demo\Scripts\BasicInkExample.cs" initialLine="84" containingFunctionPresentation="method 'RefreshView'">
-            <startOffsets>
-              <option value="1993" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2012" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -3,8 +3,10 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Ink.Runtime;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour
@@ -15,18 +17,23 @@ public class BasicInkExample : MonoBehaviour
 	[SerializeField] private TMP_Text textBox;
 	[SerializeField] private GameObject choices;
 
-	[SerializeField] private List<AudioClip> audioClips;
+	private List<AudioClip> audioClips;
 	private AudioSource audioSource;
 
+	
+	
 	private Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
 	private void Start()
 	{
-		
+
 	}
 
 	void Awake()
 	{
-		audioSource = GetComponent<AudioSource>();
+
+			var loadedClipArray = Resources.LoadAll<AudioClip>("Sounds");
+			audioClips = loadedClipArray.ToList();
+			audioSource = GetComponent<AudioSource>();
 
 		foreach (var clip in audioClips)
 		{
@@ -105,6 +112,9 @@ public class BasicInkExample : MonoBehaviour
 			Button choice = CreateChoiceView("End of story.\nRestart?");
 			choice.onClick.AddListener(delegate { StartStory(); });
 		}
+		
+		
+		
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
@@ -205,6 +215,7 @@ void isPlayingFalse()
 		{
 			canProceed = true;
 		}
+		
 	}
 
 	[SerializeField]
