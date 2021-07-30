@@ -11,7 +11,7 @@ using UnityEditor.Experimental.GraphView;
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour
 {
-	
+	public bool tick;
 	public static event Action<Story> OnCreateStory;
 
 	[SerializeField] private TMP_Text textBox;
@@ -19,6 +19,8 @@ public class BasicInkExample : MonoBehaviour
 
 	private List<AudioClip> audioClips;
 	private AudioSource audioSource;
+
+	private string fullText;
 
 	
 	
@@ -100,7 +102,7 @@ public class BasicInkExample : MonoBehaviour
 				
 				Choice choice = story.currentChoices[i];
 				var button = choices.transform.GetChild(i).gameObject.GetComponent<Button>();
-				button.gameObject.SetActive(true);
+				
 					CreateChoiceView(button, choice.text.Trim());
 				// Tell the button what to do when we press it
 				button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
@@ -139,12 +141,19 @@ public class BasicInkExample : MonoBehaviour
 			if (tag.StartsWith("Clip."))
 			{
 				var clipName = tag.Substring("Clip.".Length, tag.Length - "Clip.".Length).ToLower();
-				clips.TryGetValue(clipName, out AudioClip clip);
-				audioSource.PlayOneShot(clip);
-				Debug.Log(characterText.text);
+				if (clips.TryGetValue(clipName, out AudioClip clip))
+				{
+					audioSource.PlayOneShot(clip);
+					Debug.Log(characterText.text);
+				}
 			}
 
 			
+		}
+
+		if (text.Contains(".0"))
+		{
+			text = text.Substring(0, (text.LastIndexOf('.')));
 		}
 		StartCoroutine(TypeSentence(text));
 		Text storyText = Instantiate(textPrefab) as Text;
@@ -160,8 +169,10 @@ public class BasicInkExample : MonoBehaviour
 
 	}
 
+
 	IEnumerator TypeSentence(string text)
 	{
+		fullText = text;
 		textBox.text = "";
 		foreach (var letter in text)
 		{
@@ -197,8 +208,21 @@ void isPlayingFalse()
 
 	void CreateChoiceView(Button choice, string text)
 	{
+		choice.gameObject.SetActive(true);
 		TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text>();
 		choiceText.text = text;
+
+		if (text.Contains(".0"))
+		{
+			if(!tick)
+				choice.gameObject.SetActive(false);
+			else
+			{
+				choiceText.text = choiceText.text.Substring(0, (choiceText.text.LastIndexOf('.')));
+			}
+		}
+
+		
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
@@ -213,7 +237,8 @@ void isPlayingFalse()
 	{
 		if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
 		{
-			canProceed = true;
+			if (textBox.text == fullText) canProceed = true;
+			else textBox.text = fullText;
 		}
 		
 	}
