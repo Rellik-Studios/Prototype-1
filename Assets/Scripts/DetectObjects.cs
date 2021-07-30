@@ -25,9 +25,10 @@ public class DetectObjects : MonoBehaviour
             {
 
                 //Select stage    
-                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Evidence"))
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Evidence") && hit.collider.GetComponent<EvidenceInfo>() != null)
                 {
                     Debug.Log("its a evudence");
+                    hit.collider.GetComponent<EvidenceInfo>().CollectEvidence();
                 }
             }
         }
