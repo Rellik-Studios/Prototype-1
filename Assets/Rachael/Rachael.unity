@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 1810051677}
   - component: {fileID: 1810051676}
   - component: {fileID: 1810051675}
+  - component: {fileID: 1810051679}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -473,3 +474,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810051679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810051674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd27682cd1367544a7e945a03f0c309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evidenceName: Knife
+  description: A fancy knife with a W at the end
