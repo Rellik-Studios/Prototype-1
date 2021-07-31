@@ -6,15 +6,27 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     public static gameManager Instance;
-    
 
+    [Header("Dialogue")]
+    [SerializeField] GameObject sceneController;
+
+    [SerializeField] private BasicInkExample ink;
+
+    [SerializeField] private TextAsset story;
+    public void StartStory(TextAsset _story)
+    {
+        ink.inkJSONAsset = _story; 
+        sceneController.SetActive(true);
+       
+    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
             foreach (var vEvidence in collectedEvidences)
             {
-               vEvidence.Information();
+               vEvidence.Value.Information();
             }
         }
 
@@ -22,31 +34,43 @@ public class gameManager : MonoBehaviour
         {
             foreach (var vEvidence in collectedEvidences)
             {
-                modifyEvidence(vEvidence, 1);
+                modifyEvidence(vEvidence.Value, 1);
             } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            StartStory(story);
         }
     }
 
     private void Start()
     {
-        Instance = this;
-        collectedEvidences = new HashSet<EvidenceInfo>();
+        
     }
 
-    private HashSet<EvidenceInfo> collectedEvidences;
+    private void Awake()
+    {
+        Instance = this;
+        collectedEvidences = new Dictionary<string, EvidenceInfo>();
+
+    }
+
+    public Dictionary<string, EvidenceInfo> collectedEvidences;
 
     public void addEvidence(EvidenceInfo _evidence)
     {
-        collectedEvidences.Add(_evidence);
+        if(!collectedEvidences.ContainsKey(_evidence.evidenceName))
+            collectedEvidences.Add(_evidence.evidenceName, _evidence);
     }
 
     public void modifyEvidence(EvidenceInfo _evidence, int append)
     {
         foreach (var evidence in collectedEvidences)
         {
-            if (evidence == _evidence)
+            if (evidence.Value == _evidence)
             {
-                evidence.pointer++;
+                evidence.Value.pointer++;
             }
         }
     }

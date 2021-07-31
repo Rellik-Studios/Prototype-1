@@ -22,25 +22,48 @@ public class BasicInkExample : MonoBehaviour
 
 	private string fullText;
 
+	public TextAsset inkJSONAsset = null;
+	public Story story;
+
+	[SerializeField]
+	private Canvas canvas = null;
+
+	// UI Prefabs
+	[SerializeField]
+	private Text textPrefab = null;
+	[SerializeField]
+	private Button buttonPrefab = null;
+
+	private bool isPlaying = false;
+	[SerializeField] private TMP_Text characterText;
+		public bool canProceed { get; set; }
 	
 	
 	private Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
+	private bool first = true;
+
 	private void Start()
 	{
 
 	}
 
-	void Awake()
+	private void OnDisable()
 	{
+		//clips = new Dictionary<string, AudioClip>();
+	}
 
+	void OnEnable()
+	{
+		canProceed = true;
 			var loadedClipArray = Resources.LoadAll<AudioClip>("Sounds");
 			audioClips = loadedClipArray.ToList();
 			audioSource = GetComponent<AudioSource>();
 
-		foreach (var clip in audioClips)
-		{
-			clips.Add(clip.name.ToLower(), clip);
-		}
+		if(clips.Count == 0)
+			foreach (var clip in audioClips)
+			{
+				clips.Add(clip.name.ToLower(), clip);
+			}
 		
 		// Remove the default message
 		RemoveChildren();
@@ -48,7 +71,7 @@ public class BasicInkExample : MonoBehaviour
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory()
+	public void StartStory()
 	{
 		story = new Story(inkJSONAsset.text);
 		if (OnCreateStory != null) OnCreateStory(story);
@@ -109,10 +132,9 @@ public class BasicInkExample : MonoBehaviour
 			}
 		}
 		// If we've read all the content and there's no choices, the story is finished!
-		else
+		else if(!canProceed)
 		{
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate { StartStory(); });
+			transform.parent.gameObject.SetActive(false);
 		}
 		
 		
@@ -214,12 +236,24 @@ void isPlayingFalse()
 
 		if (text.Contains(".0"))
 		{
-			if(!tick)
-				choice.gameObject.SetActive(false);
+			var check = choiceText.text.Substring(choiceText.text.LastIndexOf('.') + 2);
+			var append = check.Substring(check.Length - 1);
+			check = check.Substring(0, check.Length - 1);
+			if (gameManager.Instance.collectedEvidences.TryGetValue(check, out EvidenceInfo evidenceInfo))
+			{
+				if(Int32.TryParse(append, out int app))
+					if(evidenceInfo.pointer < app - 1)
+						choice.gameObject.SetActive(false);
+					else
+					{
+						choiceText.text = choiceText.text.Substring(0, (choiceText.text.LastIndexOf('.')));
+					}
+			}
 			else
 			{
-				choiceText.text = choiceText.text.Substring(0, (choiceText.text.LastIndexOf('.')));
+				choice.gameObject.SetActive(false);
 			}
+			
 		}
 
 		
@@ -238,26 +272,11 @@ void isPlayingFalse()
 		if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
 		{
 			if (textBox.text == fullText) canProceed = true;
-			else textBox.text = fullText;
 		}
-		
 	}
+		
+	
 
-	[SerializeField]
-	private TextAsset inkJSONAsset = null;
-	public Story story;
-
-	[SerializeField]
-	private Canvas canvas = null;
-
-	// UI Prefabs
-	[SerializeField]
-	private Text textPrefab = null;
-	[SerializeField]
-	private Button buttonPrefab = null;
-
-	private bool isPlaying = false;
-	[SerializeField] private TMP_Text characterText;
-	private bool canProceed = true;
+	
 	
 }
