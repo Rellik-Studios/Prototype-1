@@ -11,7 +11,7 @@ using UnityEditor.Experimental.GraphView;
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour
 {
-	
+	public bool tick;
 	public static event Action<Story> OnCreateStory;
 
 	[SerializeField] private TMP_Text textBox;
@@ -20,25 +20,50 @@ public class BasicInkExample : MonoBehaviour
 	private List<AudioClip> audioClips;
 	private AudioSource audioSource;
 
+	private string fullText;
+
+	public TextAsset inkJSONAsset = null;
+	public Story story;
+
+	[SerializeField]
+	private Canvas canvas = null;
+
+	// UI Prefabs
+	[SerializeField]
+	private Text textPrefab = null;
+	[SerializeField]
+	private Button buttonPrefab = null;
+
+	private bool isPlaying = false;
+	[SerializeField] private TMP_Text characterText;
+		public bool canProceed { get; set; }
 	
 	
 	private Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
+	private bool first = true;
+
 	private void Start()
 	{
 
 	}
 
-	void Awake()
+	private void OnDisable()
 	{
+		//clips = new Dictionary<string, AudioClip>();
+	}
 
+	void OnEnable()
+	{
+		canProceed = true;
 			var loadedClipArray = Resources.LoadAll<AudioClip>("Sounds");
 			audioClips = loadedClipArray.ToList();
 			audioSource = GetComponent<AudioSource>();
 
-		foreach (var clip in audioClips)
-		{
-			clips.Add(clip.name.ToLower(), clip);
-		}
+		if(clips.Count == 0)
+			foreach (var clip in audioClips)
+			{
+				clips.Add(clip.name.ToLower(), clip);
+			}
 		
 		// Remove the default message
 		RemoveChildren();
@@ -46,7 +71,7 @@ public class BasicInkExample : MonoBehaviour
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory()
+	public void StartStory()
 	{
 		story = new Story(inkJSONAsset.text);
 		if (OnCreateStory != null) OnCreateStory(story);
@@ -100,17 +125,16 @@ public class BasicInkExample : MonoBehaviour
 				
 				Choice choice = story.currentChoices[i];
 				var button = choices.transform.GetChild(i).gameObject.GetComponent<Button>();
-				button.gameObject.SetActive(true);
+				
 					CreateChoiceView(button, choice.text.Trim());
 				// Tell the button what to do when we press it
 				button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
 			}
 		}
 		// If we've read all the content and there's no choices, the story is finished!
-		else
+		else if(!canProceed)
 		{
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate { StartStory(); });
+			transform.parent.gameObject.SetActive(false);
 		}
 		
 		
@@ -139,12 +163,19 @@ public class BasicInkExample : MonoBehaviour
 			if (tag.StartsWith("Clip."))
 			{
 				var clipName = tag.Substring("Clip.".Length, tag.Length - "Clip.".Length).ToLower();
-				clips.TryGetValue(clipName, out AudioClip clip);
-				audioSource.PlayOneShot(clip);
-				Debug.Log(characterText.text);
+				if (clips.TryGetValue(clipName, out AudioClip clip))
+				{
+					audioSource.PlayOneShot(clip);
+					Debug.Log(characterText.text);
+				}
 			}
 
 			
+		}
+
+		if (text.Contains(".0"))
+		{
+			text = text.Substring(0, (text.LastIndexOf('.')));
 		}
 		StartCoroutine(TypeSentence(text));
 		Text storyText = Instantiate(textPrefab) as Text;
@@ -160,8 +191,10 @@ public class BasicInkExample : MonoBehaviour
 
 	}
 
+
 	IEnumerator TypeSentence(string text)
 	{
+		fullText = text;
 		textBox.text = "";
 		foreach (var letter in text)
 		{
@@ -197,8 +230,33 @@ void isPlayingFalse()
 
 	void CreateChoiceView(Button choice, string text)
 	{
+		choice.gameObject.SetActive(true);
 		TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text>();
 		choiceText.text = text;
+
+		if (text.Contains(".0"))
+		{
+			var check = choiceText.text.Substring(choiceText.text.LastIndexOf('.') + 2);
+			var append = check.Substring(check.Length - 1);
+			check = check.Substring(0, check.Length - 1);
+			if (gameManager.Instance.collectedEvidences.TryGetValue(check, out EvidenceInfo evidenceInfo))
+			{
+				if(Int32.TryParse(append, out int app))
+					if(evidenceInfo.pointer < app - 1)
+						choice.gameObject.SetActive(false);
+					else
+					{
+						choiceText.text = choiceText.text.Substring(0, (choiceText.text.LastIndexOf('.')));
+					}
+			}
+			else
+			{
+				choice.gameObject.SetActive(false);
+			}
+			
+		}
+
+		
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
@@ -213,26 +271,12 @@ void isPlayingFalse()
 	{
 		if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
 		{
-			canProceed = true;
+			if (textBox.text == fullText) canProceed = true;
 		}
-		
 	}
+		
+	
 
-	[SerializeField]
-	private TextAsset inkJSONAsset = null;
-	public Story story;
-
-	[SerializeField]
-	private Canvas canvas = null;
-
-	// UI Prefabs
-	[SerializeField]
-	private Text textPrefab = null;
-	[SerializeField]
-	private Button buttonPrefab = null;
-
-	private bool isPlaying = false;
-	[SerializeField] private TMP_Text characterText;
-	private bool canProceed = true;
+	
 	
 }
