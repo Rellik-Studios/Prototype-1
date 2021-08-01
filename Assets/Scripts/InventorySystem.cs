@@ -37,6 +37,7 @@ public class InventorySystem : MonoBehaviour
             UpdateInventory();
         }
     }
+    //function used for the buttons in inventory 
     public void SelectEvidence(int index)
     {
         current_index = index;
@@ -44,6 +45,7 @@ public class InventorySystem : MonoBehaviour
 
 
     }
+    
     public void UpdateInventory()
     {
         int index = -1;
@@ -55,7 +57,7 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-   
+   //update the preview shown in inventory system.
     void UpdatePreview()
     {
         //update name
