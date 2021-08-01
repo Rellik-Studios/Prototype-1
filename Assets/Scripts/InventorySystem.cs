@@ -53,25 +53,29 @@ public class InventorySystem : MonoBehaviour
         {
             index++;
             evidList[index] = vEvidence.Value;
-            slots[index] = evidList[index].GetImage();
+            slots[index].sprite = evidList[index].GetImage();
         }
     }
 
    //update the preview shown in inventory system.
     void UpdatePreview()
     {
-        //update name
-        nameText.text = evidList[current_index].evidenceName;
-
-        //update description
-        nameDescript.text = "";
-        foreach (string sentence in evidList[current_index].descriptions)
+        if (evidList[current_index] != null)
         {
-            nameDescript.text += sentence;
-        }
+            //update name
+            nameText.text = evidList[current_index].evidenceName;
 
-        //update image
-        previewImage = evidList[current_index].GetImage();
+            //update description
+            nameDescript.text = evidList[current_index].descriptions[evidList[current_index].pointer];
+
+            //foreach (string sentence in evidList[current_index].descriptions)
+            //{
+            //    nameDescript.text += sentence;
+            //}
+
+            //update image
+            previewImage.sprite = evidList[current_index].GetImage();
+        }
 
     }
 }

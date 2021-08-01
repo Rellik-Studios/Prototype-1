@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
+using UnityEngine.UI;
 
 public class EvidenceInfo : MonoBehaviour
 {
-    private Image evidenceImage;
+    private Sprite evidenceImage;
 
     public string evidenceName;
     [TextArea]
@@ -17,7 +16,7 @@ public class EvidenceInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        evidenceImage = Resources.Load<Image>("Images/AppleCrate.png");
+        evidenceImage = Resources.Load<Sprite>("Images/AppleCrate");
     }
 
     // Update is called once per frame
@@ -41,7 +40,7 @@ public class EvidenceInfo : MonoBehaviour
         Debug.Log(descriptions[pointer]);
     }
 
-    public Image GetImage()
+    public Sprite GetImage()
     {
         return evidenceImage;
     }
