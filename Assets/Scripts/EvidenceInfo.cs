@@ -17,7 +17,7 @@ public class EvidenceInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        evidenceImage = Resources.Load<Image>("Images/evidenceName.png");
+        evidenceImage = Resources.Load<Image>("Images/AppleCrate.png");
     }
 
     // Update is called once per frame
@@ -39,5 +39,10 @@ public class EvidenceInfo : MonoBehaviour
     {
         Debug.Log(evidenceName);
         Debug.Log(descriptions[pointer]);
+    }
+
+    public Image GetImage()
+    {
+        return evidenceImage;
     }
 }
