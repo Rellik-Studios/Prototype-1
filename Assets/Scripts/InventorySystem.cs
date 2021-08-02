@@ -10,10 +10,12 @@ public class InventorySystem : MonoBehaviour
     private EvidenceInfo[] evidList = new EvidenceInfo[12];
     private bool IsInvenOpen = false;
     public GameObject InventoryUI;
+    public GameObject Preview;
 
     public Text nameText;
     public Text nameDescript;
     public Image previewImage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +29,22 @@ public class InventorySystem : MonoBehaviour
         //for testing purposes on whether the inventory menu is opened
         if (Input.GetKeyDown(KeyCode.E))
         {
+
             IsInvenOpen = !IsInvenOpen;
             InventoryUI.SetActive(IsInvenOpen);
+            Preview.SetActive(false);
             current_index = -1;
+
+            //update name
+            nameText.text = "";
+
+            //update description
+            nameDescript.text = "";
+
+            //update image
+            previewImage.sprite = null;
+
+            UpdateInventory();
         }
         //this function will update the Inventory items in there
         if (Input.GetKeyDown(KeyCode.Q))
@@ -41,9 +56,33 @@ public class InventorySystem : MonoBehaviour
     public void SelectEvidence(int index)
     {
         current_index = index;
-        UpdatePreview();
+        if (evidList[current_index] != null)
+        {
+            Preview.SetActive(true);
+            UpdatePreview();
+        }
+        
+        
 
 
+    }
+    public void OpenInventory()
+    {
+        IsInvenOpen = !IsInvenOpen;
+        InventoryUI.SetActive(IsInvenOpen);
+        Preview.SetActive(false);
+        current_index = -1;
+
+        //update name
+        nameText.text = "";
+
+        //update description
+        nameDescript.text = "";
+
+        //update image
+        previewImage.sprite = null;
+
+        UpdateInventory();
     }
     
     public void UpdateInventory()
@@ -60,8 +99,7 @@ public class InventorySystem : MonoBehaviour
    //update the preview shown in inventory system.
     void UpdatePreview()
     {
-        if (evidList[current_index] != null)
-        {
+
             //update name
             nameText.text = evidList[current_index].evidenceName;
 
@@ -75,7 +113,7 @@ public class InventorySystem : MonoBehaviour
 
             //update image
             previewImage.sprite = evidList[current_index].GetImage();
-        }
+        
 
     }
 }
