@@ -15,7 +15,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] private TextAsset story;
     public void StartStory(TextAsset _story)
     {
-        ink.inkJSONAsset = _story; 
+        ink.m_inkJsonAsset = _story; 
         sceneController.SetActive(true);
        
     }
