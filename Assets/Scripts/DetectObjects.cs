@@ -9,6 +9,7 @@ public class DetectObjects : MonoBehaviour
     private Camera _camera;
     [SerializeField] TextAsset story;
     public GameObject Inventory;
+    public GameObject Dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class DetectObjects : MonoBehaviour
     void Update()
     {
         //Clicking down on a object 
-        if (Input.GetMouseButtonDown(0) && !Inventory.activeSelf)
+        if (Input.GetMouseButtonDown(0) && (!Inventory.activeSelf && !Dialogue.activeSelf))
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             //checking if its a evidence object
