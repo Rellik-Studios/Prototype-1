@@ -184,6 +184,7 @@ MonoBehaviour:
     m_Bits: 64
   story: {fileID: 0}
   Inventory: {fileID: 1114196441}
+  Dialogue: {fileID: 2009679603}
 --- !u!4 &99772421
 Transform:
   m_ObjectHideFlags: 0
