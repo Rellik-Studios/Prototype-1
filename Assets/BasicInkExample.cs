@@ -6,40 +6,53 @@ using System.Collections.Generic;
 using System.Linq;
 using Ink.Runtime;
 using TMPro;
+using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour
 {
-	public bool tick;
+	[FormerlySerializedAs("tick")] public bool m_tick;
 	public static event Action<Story> OnCreateStory;
 
-	[SerializeField] private TMP_Text textBox;
-	[SerializeField] private GameObject choices;
+	[FormerlySerializedAs("textBox")] 
+	[SerializeField] private TMP_Text m_textBox;
 
-	private List<AudioClip> audioClips;
-	private AudioSource audioSource;
 
-	private string fullText;
+	[SerializeField] private Image m_talker;
+	
+	[FormerlySerializedAs("choices")] 
+	[SerializeField] private GameObject m_choices;
 
-	public TextAsset inkJSONAsset = null;
+	private List<AudioClip> m_audioClips;
+	private AudioSource m_audioSource;
+
+	private string m_fullText;
+
+	[FormerlySerializedAs("inkJSONAsset")] public TextAsset m_inkJsonAsset = null;
 	public Story story;
 
-	[SerializeField]
-	private Canvas canvas = null;
+	[FormerlySerializedAs("canvas")] 
+	[SerializeField] private Canvas m_canvas = null;
 
 	// UI Prefabs
-	[SerializeField]
-	private Text textPrefab = null;
-	[SerializeField]
-	private Button buttonPrefab = null;
+	[FormerlySerializedAs("textPrefab")] 
+	[SerializeField] private Text m_textPrefab = null;
+	
+	[FormerlySerializedAs("buttonPrefab")] 
+	[SerializeField] private Button m_buttonPrefab = null;
 
-	private bool isPlaying = false;
-	[SerializeField] private TMP_Text characterText;
+	private bool m_isPlaying = false;
+	
+	[FormerlySerializedAs("characterText")] 
+	[SerializeField] private TMP_Text m_characterText;
 		public bool canProceed { get; set; }
 	
 	
-	private Dictionary<string, AudioClip> clips = new Dictionary<string, AudioClip>();
-	private bool first = true;
+	private Dictionary<string, AudioClip> m_clips = new Dictionary<string, AudioClip>();
+	private Dictionary<string, Sprite> m_emotions = new Dictionary<string, Sprite>();
+	
+	private bool m_first = true;
 
 	private void Start()
 	{
@@ -51,18 +64,25 @@ public class BasicInkExample : MonoBehaviour
 		//clips = new Dictionary<string, AudioClip>();
 	}
 
+	void AddToDictionary<T>(Dictionary<string, T> _dictionary, string _path) where T : Object
+	{
+		var array = Resources.LoadAll<T>(_path);
+		var list = array.ToList();
+
+		if(_dictionary.Count == 0)
+			foreach (var li in list)
+			{
+				_dictionary.Add(li.name.ToLower(), li);
+			}
+	}
+
 	void OnEnable()
 	{
+		AddToDictionary<AudioClip>(m_clips, "Sounds");
+		AddToDictionary(m_emotions, "Emotions");
 		canProceed = true;
-			var loadedClipArray = Resources.LoadAll<AudioClip>("Sounds");
-			audioClips = loadedClipArray.ToList();
-			audioSource = GetComponent<AudioSource>();
+		m_audioSource = GetComponent<AudioSource>();
 
-		if(clips.Count == 0)
-			foreach (var clip in audioClips)
-			{
-				clips.Add(clip.name.ToLower(), clip);
-			}
 		
 		// Remove the default message
 		RemoveChildren();
@@ -72,7 +92,7 @@ public class BasicInkExample : MonoBehaviour
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory()
 	{
-		story = new Story(inkJSONAsset.text);
+		story = new Story(m_inkJsonAsset.text);
 		if (OnCreateStory != null) OnCreateStory(story);
 		StartCoroutine(RefreshView());
 	}
@@ -85,17 +105,16 @@ public class BasicInkExample : MonoBehaviour
 		// Remove all the UI on screen
 		RemoveChildren();
 
-		for (int i = 0; i < choices.transform.childCount; i++)
+		for (int i = 0; i < m_choices.transform.childCount; i++)
 		{
-			choices.transform.GetChild(i).gameObject.SetActive(false);
+			m_choices.transform.GetChild(i).gameObject.SetActive(false);
 		}
 
-
-	// Read all the content until we can't continue any more
-	while (story.canContinue)
+// Read all the content until we can't continue any more
+		while (story.canContinue)
 		{
 			// Continue gets the next line of the story
-			while (audioSource.isPlaying)
+			while (m_audioSource.isPlaying)
 			{
 				yield return null;
 			}
@@ -105,12 +124,12 @@ public class BasicInkExample : MonoBehaviour
 				yield return null;
 			}
 
-			
+
 
 			string text = story.Continue();
 			// This removes any white space from the text.
 			text = text.Trim();
-			
+
 			// Display the text on screen!
 			CreateContentView(text);
 			canProceed = false;
@@ -123,7 +142,7 @@ public class BasicInkExample : MonoBehaviour
 			{
 				
 				Choice choice = story.currentChoices[i];
-				var button = choices.transform.GetChild(i).gameObject.GetComponent<Button>();
+				var button = m_choices.transform.GetChild(i).gameObject.GetComponent<Button>();
 				
 					CreateChoiceView(button, choice.text.Trim());
 				// Tell the button what to do when we press it
@@ -155,17 +174,27 @@ public class BasicInkExample : MonoBehaviour
 		{
 			if (tag.StartsWith("Character."))
 			{
-				characterText.text = tag.Substring("Character.".Length, tag.Length - "Character.".Length);
-				Debug.Log(characterText.text);
+				m_characterText.text = tag.Substring("Character.".Length, tag.Length - "Character.".Length);
+				Debug.Log(m_characterText.text);
 			}
 			
 			if (tag.StartsWith("Clip."))
 			{
 				var clipName = tag.Substring("Clip.".Length, tag.Length - "Clip.".Length).ToLower();
-				if (clips.TryGetValue(clipName, out AudioClip clip))
+				if (m_clips.TryGetValue(clipName, out AudioClip clip))
 				{
-					audioSource.PlayOneShot(clip);
-					Debug.Log(characterText.text);
+					m_audioSource.PlayOneShot(clip);
+					Debug.Log(m_characterText.text);
+				}
+			}
+
+			if (tag.StartsWith("Emotion."))
+			{
+				var emoteName = tag.Substring("Emotion.".Length, tag.Length - "Emotion.".Length).ToLower();
+
+				if (m_emotions.TryGetValue(emoteName, out Sprite sprite))
+				{
+					m_talker.sprite = sprite;
 				}
 			}
 
@@ -177,12 +206,12 @@ public class BasicInkExample : MonoBehaviour
 			text = text.Substring(0, (text.LastIndexOf('.')));
 		}
 		StartCoroutine(TypeSentence(text));
-		Text storyText = Instantiate(textPrefab) as Text;
+		Text storyText = Instantiate(m_textPrefab) as Text;
 		//storyText.text = text;
-		storyText.transform.SetParent(canvas.transform, true);
+		storyText.transform.SetParent(m_canvas.transform, true);
 		
 		
-		isPlaying = true;
+		m_isPlaying = true;
 
 		//storyText.rectTransform.position = new Vector3(500, 200, 0);
 		//storyText.enabled = false;
@@ -193,28 +222,28 @@ public class BasicInkExample : MonoBehaviour
 
 	IEnumerator TypeSentence(string text)
 	{
-		fullText = text;
-		textBox.text = "";
+		m_fullText = text;
+		m_textBox.text = "";
 		foreach (var letter in text)
 		{
-			textBox.text += letter;
+			m_textBox.text += letter;
 			yield return null;
 		}
 
 		yield return new WaitForSeconds(3f);
-		isPlaying = false;
+		m_isPlaying = false;
 		//textBox.SetText(text);
 	}
 
-void isPlayingFalse()
+void IsPlayingFalse()
 	{
-		isPlaying = false;
+		m_isPlaying = false;
 	}
 	// Creates a button showing the choice text
 	Button CreateChoiceView (string text) {
 		// Creates the button from a prefab
-		Button choice = Instantiate (buttonPrefab) as Button;
-		choice.transform.SetParent (canvas.transform, false);
+		Button choice = Instantiate (m_buttonPrefab) as Button;
+		choice.transform.SetParent (m_canvas.transform, false);
 		
 		// Gets the text from the button prefab
 		Text choiceText = choice.GetComponentInChildren<Text> ();
@@ -260,17 +289,17 @@ void isPlayingFalse()
 
 	// Destroys all the children of this gameobject (all the UI)
 	void RemoveChildren () {
-		int childCount = canvas.transform.childCount;
+		int childCount = m_canvas.transform.childCount;
 		for (int i = childCount - 1; i >= 0; --i) {
-			GameObject.Destroy (canvas.transform.GetChild (i).gameObject);
+			GameObject.Destroy (m_canvas.transform.GetChild (i).gameObject);
 		}
 	}
 
 	private void Update()
 	{
-		if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
+		if (!m_audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
 		{
-			if (textBox.text == fullText) canProceed = true;
+			if (m_textBox.text == m_fullText) canProceed = true;
 		}
 	}
 		
