@@ -8,6 +8,7 @@ public class DetectObjects : MonoBehaviour
     [SerializeField] private LayerMask objects;
     private Camera _camera;
     [SerializeField] TextAsset story;
+    public GameObject Inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class DetectObjects : MonoBehaviour
     void Update()
     {
         //Clicking down on a object 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Inventory.activeSelf)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             //checking if its a evidence object
@@ -30,10 +31,18 @@ public class DetectObjects : MonoBehaviour
                 {
                     gameManager.Instance.addEvidence(evidence);
                 }
+                else if (hit.collider.TryGetComponent<SuspectsStories>(out SuspectsStories suspects))
+                {
+                    gameManager.Instance.StartStory(suspects.GetStory());
+                }
+
+
+                /*
                 else if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Suspect"))
                 {
                     gameManager.Instance.StartStory(story);
                 }
+                */
             }
         }
     }
