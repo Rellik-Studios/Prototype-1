@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class EvidenceInfo : MonoBehaviour
@@ -12,6 +13,7 @@ public class EvidenceInfo : MonoBehaviour
     public List<string> descriptions;
 
     public int pointer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +34,10 @@ public class EvidenceInfo : MonoBehaviour
         }
     }
 
-    public void ModifyAppend()
+    public void ModifyAppend(int _append)
     {
-        pointer++;
+        if(_append > pointer)
+            pointer = _append;
     }
    
 
