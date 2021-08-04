@@ -74,6 +74,12 @@ public class InventorySystem : MonoBehaviour
 
 
     }
+    public void CloseInventory()
+    {
+        IsInvenOpen = false;
+        InventoryUI.SetActive(false);
+        EvidenceScreen.SetActive(false);
+    }
     public void OpenInventory()
     {
         IsInvenOpen = !IsInvenOpen;
@@ -131,7 +137,15 @@ public class InventorySystem : MonoBehaviour
     public void OpenSusList()
     {
         SuspectScreen.SetActive(!SuspectScreen.activeSelf);
+        /*
+        foreach (var slot in slots)
+        {
+            slot.color = Color.white;
+        }
+        */
     }
+
+    
     public void ConfirmSus()
     {
         Debug.Log("confirmed");
@@ -147,18 +161,24 @@ public class InventorySystem : MonoBehaviour
         }
         if (evidList[current_index] != null)
         {
-            if (!evidSelect.Contains(evidList[current_index]))
-            {
-                evidSelect.Add(evidList[current_index]);
-                slots[current_index].color = Color.red;
-
-            }
-            else
-            {
-                evidSelect.Remove(evidList[current_index]);
-                slots[current_index].color = Color.white;
-            }
+            Debug.Log("you chose " + evidList[current_index].evidenceName);
+            ConfirmEvidence();
         }
+
+        //if (evidList[current_index] != null)
+        //{
+        //    if (!evidSelect.Contains(evidList[current_index]))
+        //    {
+        //        evidSelect.Add(evidList[current_index]);
+        //        slots[current_index].color = Color.red;
+
+            //    }
+            //    else
+            //    {
+            //        evidSelect.Remove(evidList[current_index]);
+            //        slots[current_index].color = Color.white;
+            //    }
+            //}
     }
     public void ConfirmEvidence()
     {
