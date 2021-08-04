@@ -16,7 +16,11 @@ public class EvidenceInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        evidenceImage = Resources.Load<Sprite>("Images/knife");
+        evidenceImage = Resources.Load<Sprite>("Images/" + gameObject.name.ToLower().Replace(" ", " "));
+        if(evidenceImage == null)
+        {
+            evidenceImage = Resources.Load<Sprite>("Images/knife");
+        }
     }
 
     // Update is called once per frame
