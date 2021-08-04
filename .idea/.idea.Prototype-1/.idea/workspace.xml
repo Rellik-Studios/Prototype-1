@@ -59,10 +59,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9720">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9720" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -116,13 +116,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs</url>
-          <line>50</line>
+          <line>58</line>
           <properties documentPath="D:\Users\mds00001xo\Documents\GitHub\Prototype-1\Assets\Scripts\DetectObjects.cs" initialLine="43" containingFunctionPresentation="method 'Update'">
             <startOffsets>
-              <option value="1801" />
+              <option value="2177" />
             </startOffsets>
             <endOffsets>
-              <option value="1851" />
+              <option value="2227" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="22" />
@@ -142,13 +142,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs</url>
-          <line>53</line>
+          <line>61</line>
           <properties documentPath="D:\Users\mds00001xo\Documents\GitHub\Prototype-1\Assets\Scripts\DetectObjects.cs" initialLine="46" containingFunctionPresentation="method 'Update'">
             <startOffsets>
-              <option value="1955" />
+              <option value="2331" />
             </startOffsets>
             <endOffsets>
-              <option value="2005" />
+              <option value="2381" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="25" />

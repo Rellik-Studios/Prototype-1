@@ -2888,7 +2888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340013d60a9b9404395daa24da9d6450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 4900000, guid: 81d55ff933a29234bbb4255d84a50c68, type: 3}
+  story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
 --- !u!1 &534960220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,7 +3230,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23662
+  m_Name: pb_Mesh63198
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3609,7 +3609,7 @@ GameObject:
   - component: {fileID: 1010468848}
   - component: {fileID: 1010468847}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Talker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3641,7 +3641,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010468845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3654,7 +3654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a61abf290b8b6d4db78c68f0d91cb08, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4809,7 +4809,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23640
+  m_Name: pb_Mesh63176
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5042,9 +5042,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tick: 0
   m_textBox: {fileID: 767829629}
-  m_talker: {fileID: 0}
+  m_talker: {fileID: 1010468847}
   m_choices: {fileID: 1740810445}
-  m_inkJsonAsset: {fileID: 4900000, guid: cbb62f76019604049b8191033aa43bd1, type: 3}
+  m_inkJsonAsset: {fileID: 4900000, guid: 5a5fa8c145b2084479a70a0ca65f8f3c, type: 3}
   m_canvas: {fileID: 1908123726}
   m_textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
   m_buttonPrefab: {fileID: 11455116, guid: 37c108a6c38964f79a6621eccb33ddc1, type: 3}

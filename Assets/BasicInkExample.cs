@@ -15,14 +15,14 @@ public class BasicInkExample : MonoBehaviour
 	[FormerlySerializedAs("tick")] public bool m_tick;
 	public static event Action<Story> OnCreateStory;
 
-	[FormerlySerializedAs("textBox")] 
-	[SerializeField] private TMP_Text m_textBox;
+	[FormerlySerializedAs("textBox")] [SerializeField]
+	private TMP_Text m_textBox;
 
 
 	[SerializeField] private Image m_talker;
-	
-	[FormerlySerializedAs("choices")] 
-	[SerializeField] private GameObject m_choices;
+
+	[FormerlySerializedAs("choices")] [SerializeField]
+	private GameObject m_choices;
 
 	private List<AudioClip> m_audioClips;
 	private AudioSource m_audioSource;
@@ -32,26 +32,27 @@ public class BasicInkExample : MonoBehaviour
 	[FormerlySerializedAs("inkJSONAsset")] public TextAsset m_inkJsonAsset = null;
 	public Story story;
 
-	[FormerlySerializedAs("canvas")] 
-	[SerializeField] private Canvas m_canvas = null;
+	[FormerlySerializedAs("canvas")] [SerializeField]
+	private Canvas m_canvas = null;
 
 	// UI Prefabs
-	[FormerlySerializedAs("textPrefab")] 
-	[SerializeField] private Text m_textPrefab = null;
-	
-	[FormerlySerializedAs("buttonPrefab")] 
-	[SerializeField] private Button m_buttonPrefab = null;
+	[FormerlySerializedAs("textPrefab")] [SerializeField]
+	private Text m_textPrefab = null;
+
+	[FormerlySerializedAs("buttonPrefab")] [SerializeField]
+	private Button m_buttonPrefab = null;
 
 	private bool m_isPlaying = false;
-	
-	[FormerlySerializedAs("characterText")] 
-	[SerializeField] private TMP_Text m_characterText;
-		public bool canProceed { get; set; }
-	
-	
+
+	[FormerlySerializedAs("characterText")] [SerializeField]
+	private TMP_Text m_characterText;
+
+	public bool canProceed { get; set; }
+
+
 	private Dictionary<string, AudioClip> m_clips = new Dictionary<string, AudioClip>();
 	private Dictionary<string, Sprite> m_emotions = new Dictionary<string, Sprite>();
-	
+
 	private bool m_first = true;
 
 	private void Start()
@@ -69,7 +70,7 @@ public class BasicInkExample : MonoBehaviour
 		var array = Resources.LoadAll<T>(_path);
 		var list = array.ToList();
 
-		if(_dictionary.Count == 0)
+		if (_dictionary.Count == 0)
 			foreach (var li in list)
 			{
 				_dictionary.Add(li.name.ToLower(), li);
@@ -83,7 +84,7 @@ public class BasicInkExample : MonoBehaviour
 		canProceed = true;
 		m_audioSource = GetComponent<AudioSource>();
 
-		
+
 		// Remove the default message
 		RemoveChildren();
 		StartStory();
@@ -140,23 +141,23 @@ public class BasicInkExample : MonoBehaviour
 		{
 			for (int i = 0; i < story.currentChoices.Count; i++)
 			{
-				
+
 				Choice choice = story.currentChoices[i];
 				var button = m_choices.transform.GetChild(i).gameObject.GetComponent<Button>();
-				
-					CreateChoiceView(button, choice.text.Trim());
+
+				CreateChoiceView(button, choice.text.Trim());
 				// Tell the button what to do when we press it
 				button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
 			}
 		}
 		// If we've read all the content and there's no choices, the story is finished!
-		else if(!canProceed)
+		else if (!canProceed)
 		{
 			transform.parent.gameObject.SetActive(false);
 		}
-		
-		
-		
+
+
+
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
@@ -177,7 +178,7 @@ public class BasicInkExample : MonoBehaviour
 				m_characterText.text = tag.Substring("Character.".Length, tag.Length - "Character.".Length);
 				Debug.Log(m_characterText.text);
 			}
-			
+
 			if (tag.StartsWith("Clip."))
 			{
 				var clipName = tag.Substring("Clip.".Length, tag.Length - "Clip.".Length).ToLower();
@@ -191,26 +192,44 @@ public class BasicInkExample : MonoBehaviour
 			if (tag.StartsWith("Emotion."))
 			{
 				var emoteName = tag.Substring("Emotion.".Length, tag.Length - "Emotion.".Length).ToLower();
-
-				if (m_emotions.TryGetValue(emoteName, out Sprite sprite))
+				if (emoteName == "null")
+					m_talker.enabled = false;
+				
+				else if (m_emotions.TryGetValue(emoteName, out Sprite sprite))
 				{
+					m_talker.enabled = true;
 					m_talker.sprite = sprite;
 				}
 			}
 
-			
+			if (tag.StartsWith("Interaction"))
+			{
+				var interactName = tag.Substring("Interaction.".Length, tag.Length - "Interaction.".Length).ToLower();
+
+				gameManager.Instance.handleInteractions(interactName);
+			}
+
+			if (tag.StartsWith("Skip."))
+			{
+				Int32.TryParse(tag.Substring("Skip.".Length, tag.Length - "Skip.".Length).ToLower(), out int skipTimer);
+
+				Invoke("CanProceed", skipTimer);
+			}
+
+
 		}
 
 		if (text.Contains(".0"))
 		{
 			text = text.Substring(0, (text.LastIndexOf('.')));
 		}
+		StopCoroutine(TypeSentence(""));
 		StartCoroutine(TypeSentence(text));
 		Text storyText = Instantiate(m_textPrefab) as Text;
 		//storyText.text = text;
 		storyText.transform.SetParent(m_canvas.transform, true);
-		
-		
+
+
 		m_isPlaying = true;
 
 		//storyText.rectTransform.position = new Vector3(500, 200, 0);
@@ -219,6 +238,10 @@ public class BasicInkExample : MonoBehaviour
 
 	}
 
+	void CanProceed()
+	{
+		canProceed = true;
+	}
 
 	IEnumerator TypeSentence(string text)
 	{
