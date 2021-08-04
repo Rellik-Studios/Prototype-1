@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class DetectObjects : MonoBehaviour
@@ -11,31 +13,80 @@ public class DetectObjects : MonoBehaviour
     public GameObject Inventory;
     public GameObject Dialogue;
 
+    [CanBeNull] private Renderer m_revert;
+    private List<Color> defaultColor;
     // Start is called before the first frame update
     void Start()
     {
         _camera = Camera.main;
+        defaultColor = new List<Color>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Clicking down on a object 
-        if (Input.GetMouseButtonDown(0) && (!Inventory.activeSelf && !Dialogue.activeSelf))
+        if (!Inventory.activeSelf && !Dialogue.activeSelf)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             //checking if its a evidence object
             if (Physics.Raycast(ray, out RaycastHit hit, objects))
             {
                 //Select stage    
+                
                 if (hit.collider.TryGetComponent<EvidenceInfo>(out EvidenceInfo evidence))
                 {
-                    gameManager.Instance.addEvidence(evidence);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        gameManager.Instance.addEvidence(evidence);
+                        if(m_revert != null)
+                            for (var index = 0; index < m_revert.materials.Length; index++)
+                            {
+                                var mat = m_revert.materials[index];
+                                mat.color = defaultColor[index];
+                            }
+                    }
+                    else if (!gameManager.Instance.collectedEvidences.ContainsValue(evidence))
+                    {
+                        if(m_revert != null)
+                            for (var index = 0; index < m_revert.materials.Length; index++)
+                            {
+                                var mat = m_revert.materials[index];
+                                mat.color = defaultColor[index];
+                            }
+
+                        m_revert = (hit.collider.gameObject.GetComponent<Renderer>());
+                   //     defaultColor.Capacity = m_revert.materials.Length;
+                   foreach (var mat in m_revert.materials)
+                   {
+                       if(defaultColor.Count < m_revert.materials.Length)
+                        defaultColor.Add(mat.color);
+                       mat.color = Color.red;
+                       
+                   }
+                    }
+
+
                 }
                 else if (hit.collider.TryGetComponent<SuspectsStories>(out SuspectsStories suspects))
                 {
-                    gameManager.Instance.StartStory(suspects.GetStory());
+                    if (Input.GetMouseButtonDown(0))
+                        gameManager.Instance.StartStory(suspects.GetStory());
                 }
+                else
+                {
+
+                    if (m_revert != null && defaultColor != null)
+                        for (var index = 0; index < m_revert.materials.Length; index++)
+                        {
+                            var mat = m_revert.materials[index];
+                            mat.color = defaultColor[index];
+                        }
+                    //m_revert = null;
+                    //defaultColor = null;
+
+                }
+
 
 
                 /*
