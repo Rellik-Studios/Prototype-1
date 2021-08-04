@@ -34,7 +34,7 @@ public class gameManager : MonoBehaviour
         {
             foreach (var vEvidence in collectedEvidences)
             {
-                modifyEvidence(vEvidence.Value, 1);
+                modifyEvidence(vEvidence.Value);
             } 
         }
 
@@ -64,7 +64,7 @@ public class gameManager : MonoBehaviour
             collectedEvidences.Add(_evidence.evidenceName, _evidence);
     }
 
-    public void modifyEvidence(EvidenceInfo _evidence, int append)
+    public void modifyEvidence(EvidenceInfo _evidence)
     {
         foreach (var evidence in collectedEvidences)
         {
