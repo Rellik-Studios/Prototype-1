@@ -11,16 +11,24 @@ public class InventorySystem : MonoBehaviour
     private bool IsInvenOpen = false;
     public GameObject InventoryUI;
     public GameObject Preview;
+    public GameObject SuspectScreen;
+    public GameObject EvidenceScreen;
 
+    public Button inventory;
     public Text nameText;
     public Text nameDescript;
     public Image previewImage;
+    
 
+
+    private int SusNum = -1;
+    private List<EvidenceInfo> evidSelect;
 
     // Start is called before the first frame update
     void Start()
     {
         InventoryUI.SetActive(IsInvenOpen);
+        evidSelect = new List<EvidenceInfo>();
     }
 
     // Update is called once per frame
@@ -29,7 +37,7 @@ public class InventorySystem : MonoBehaviour
         //for testing purposes on whether the inventory menu is opened
         if (Input.GetKeyDown(KeyCode.E))
         {
-
+            inventory.enabled = true;
             IsInvenOpen = !IsInvenOpen;
             InventoryUI.SetActive(IsInvenOpen);
             Preview.SetActive(false);
@@ -115,5 +123,47 @@ public class InventorySystem : MonoBehaviour
             previewImage.sprite = evidList[current_index].GetImage();
         
 
+    }
+    public void PickSus(int num)
+    {
+        SusNum = num;
+    }
+    public void OpenSusList()
+    {
+        SuspectScreen.SetActive(!SuspectScreen.activeSelf);
+    }
+    public void ConfirmSus()
+    {
+        Debug.Log("confirmed");
+        SuspectScreen.SetActive(false);
+        EvidenceScreen.SetActive(true);
+        OpenInventory();
+    }
+    public void PickEvidence()
+    {
+        if(current_index ==-1)
+        {
+            return;
+        }
+        if (evidList[current_index] != null)
+        {
+            if (!evidSelect.Contains(evidList[current_index]))
+            {
+                evidSelect.Add(evidList[current_index]);
+                slots[current_index].color = Color.red;
+
+            }
+            else
+            {
+                evidSelect.Remove(evidList[current_index]);
+                slots[current_index].color = Color.white;
+            }
+        }
+    }
+    public void ConfirmEvidence()
+    {
+        Debug.Log("confirmed");
+        //this section being whether or not the player is right
+        //applying certain right evidence
     }
 }
