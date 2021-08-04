@@ -74,6 +74,14 @@ public class gameManager : MonoBehaviour
             }
         }
     }
-    
-    
+
+
+    public void handleInteractions(string interactName)
+    {
+        if (interactName == "hurt")
+        {
+            //Add hurt here
+            Debug.Log("Hurt");
+        }
+    }
 }
