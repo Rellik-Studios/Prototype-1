@@ -130,6 +130,18 @@ public class InventorySystem : MonoBehaviour
         
 
     }
+    public void AppendModify(int num)
+    {
+        foreach (var vEvidence in gameManager.Instance.collectedEvidences)
+        {
+            if (vEvidence.Value == evidList[current_index])
+            {
+                evidList[current_index].ModifyAppend(num);
+                UpdateInventory();
+                UpdatePreview();
+            }
+        }
+    }
     public void PickSus(int num)
     {
         SusNum = num;
