@@ -136,7 +136,10 @@ public class InventorySystem : MonoBehaviour
         {
             if (vEvidence.Value == evidList[current_index])
             {
-                evidList[current_index].ModifyAppend(num);
+                if (num < evidList[current_index].descriptions.Count)
+                {
+                    evidList[current_index].ModifyAppend(num);
+                }
                 UpdateInventory();
                 UpdatePreview();
             }
