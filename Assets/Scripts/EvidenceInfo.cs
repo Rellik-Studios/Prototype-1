@@ -13,6 +13,7 @@ public class EvidenceInfo : MonoBehaviour
     public List<string> descriptions;
 
     public int pointer;
+    public bool Inspected = false;
 
 
     // Start is called before the first frame update
@@ -45,6 +46,13 @@ public class EvidenceInfo : MonoBehaviour
     {
         Debug.Log(evidenceName);
         Debug.Log(descriptions[pointer]);
+    }
+
+    //when the inspect append is found set item to true as inspected
+    //used for as a value for sampling to be used
+    public void ItemInspected()
+    {
+        Inspected = true;
     }
 
     public Sprite GetImage()

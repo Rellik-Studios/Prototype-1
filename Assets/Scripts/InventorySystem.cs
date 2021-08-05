@@ -9,10 +9,14 @@ public class InventorySystem : MonoBehaviour
     public int current_index=-1;
     private EvidenceInfo[] evidList = new EvidenceInfo[12];
     private bool IsInvenOpen = false;
+    private bool IsShowOpen = false;
     public GameObject InventoryUI;
     public GameObject Preview;
     public GameObject SuspectScreen;
-    public GameObject EvidenceScreen;
+
+    public GameObject ShowButton;
+    public GameObject InspectButton;
+    public GameObject SampleButton;
 
     public Button inventory;
     public Text nameText;
@@ -69,7 +73,7 @@ public class InventorySystem : MonoBehaviour
             Preview.SetActive(true);
             UpdatePreview();
         }
-        
+
         
 
 
@@ -77,14 +81,18 @@ public class InventorySystem : MonoBehaviour
     public void CloseInventory()
     {
         IsInvenOpen = false;
+        IsShowOpen = false;
+        ShowButton.SetActive(false);
+        InspectButton.SetActive(false);
         InventoryUI.SetActive(false);
-        EvidenceScreen.SetActive(false);
+
     }
     public void OpenInventory()
     {
         IsInvenOpen = !IsInvenOpen;
         InventoryUI.SetActive(IsInvenOpen);
         Preview.SetActive(false);
+        InspectButton.SetActive(true);
         current_index = -1;
 
         //update name
@@ -114,6 +122,14 @@ public class InventorySystem : MonoBehaviour
     void UpdatePreview()
     {
 
+        if(evidList[current_index].Inspected && !IsShowOpen)
+        {
+            SampleButton.SetActive(true);
+        }
+        else
+        {
+            SampleButton.SetActive(false);
+        }
             //update name
             nameText.text = evidList[current_index].evidenceName;
 
@@ -149,6 +165,7 @@ public class InventorySystem : MonoBehaviour
     {
         SusNum = num;
     }
+
     public void OpenSusList()
     {
         SuspectScreen.SetActive(!SuspectScreen.activeSelf);
@@ -159,19 +176,32 @@ public class InventorySystem : MonoBehaviour
         }
         */
     }
+    public void ItemInspected()
+    {
+        if (evidList[current_index] != null)
+        {
+            evidList[current_index].ItemInspected();
+            UpdatePreview();
+        }
+    }
 
-    
+
     public void ConfirmSus()
     {
-        Debug.Log("confirmed");
-        SuspectScreen.SetActive(false);
-        EvidenceScreen.SetActive(true);
+        Debug.Log("confirm to show evidence to suspect");
         OpenInventory();
+        IsShowOpen = true;
+        SuspectScreen.SetActive(false);
+        ShowButton.SetActive(true);
+        InspectButton.SetActive(false);
+
+        
     }
     public void PickEvidence()
     {
         if(current_index ==-1)
         {
+            
             return;
         }
         if (evidList[current_index] != null)
