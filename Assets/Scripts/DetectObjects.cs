@@ -11,6 +11,7 @@ public class DetectObjects : MonoBehaviour
     private Camera _camera;
     [SerializeField] TextAsset story;
     public GameObject Inventory;
+    public GameObject ShowUI;
     public GameObject Dialogue;
 
     [CanBeNull] private Renderer m_revert;
@@ -26,7 +27,7 @@ public class DetectObjects : MonoBehaviour
     void Update()
     {
         //Clicking down on a object
-        if (!Inventory.activeSelf && !Dialogue.activeSelf)
+        if (!Inventory.activeSelf && !Dialogue.activeSelf && !ShowUI.activeSelf)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             //checking if its a evidence object
