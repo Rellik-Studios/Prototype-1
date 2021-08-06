@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
     public Image[] slots;
+    public GameObject Preview;
     public int current_index=-1;
     private EvidenceInfo[] evidList = new EvidenceInfo[12];
+
     private bool IsInvenOpen = false;
     private bool IsShowOpen = false;
     public GameObject InventoryUI;
-    public GameObject Preview;
+    public GameObject showUI;
+
+    //testing
+    
     public GameObject SuspectScreen;
 
     public GameObject ShowButton;
+    public GameObject InventoryButton;
     public GameObject InspectButton;
     public GameObject SampleButton;
 
@@ -73,20 +79,90 @@ public class InventorySystem : MonoBehaviour
             Preview.SetActive(true);
             UpdatePreview();
         }
+        else
+        {
+            Preview.SetActive(false);
+        }
 
         
 
 
     }
+    public void OpenInventUI()
+    {
+        IsInvenOpen = !IsInvenOpen;
+        InventoryUI.SetActive(IsInvenOpen);
+
+        Preview = InventoryUI.transform.GetChild(0).gameObject;
+        slots = InventoryUI.transform.GetChild(1).gameObject.GetComponentsInChildren<Image>();
+
+        Preview.SetActive(false);
+
+
+
+        current_index = -1;
+        nameText = Preview.transform.GetChild(0).gameObject.GetComponent<Text>();
+        nameDescript = Preview.transform.GetChild(1).gameObject.GetComponent<Text>();
+        previewImage = Preview.transform.GetChild(2).gameObject.GetComponent<Image>();
+
+        //update name
+        nameText.text = "";
+
+        //update description
+        nameDescript.text = "";
+
+        //update image
+        previewImage.sprite = null;
+
+        if(IsInvenOpen)
+        {
+            InventoryButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Briefcase_open");
+        }
+        else
+        {
+            InventoryButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Briefcase_closed");
+        }
+        InventoryButton.GetComponent<Image>().SetNativeSize();
+        UpdateInventory();
+    }
+    public void OpenShowUI()
+    {
+        IsInvenOpen = !IsInvenOpen;
+        showUI.SetActive(IsInvenOpen);
+
+        Preview = showUI.transform.GetChild(0).gameObject;
+        slots = showUI.transform.GetChild(1).gameObject.GetComponentsInChildren<Image>();
+
+        Preview.SetActive(false);
+
+
+
+        current_index = -1;
+        nameText = Preview.transform.GetChild(0).gameObject.GetComponent<Text>();
+        nameDescript = Preview.transform.GetChild(1).gameObject.GetComponent<Text>();
+        previewImage = Preview.transform.GetChild(2).gameObject.GetComponent<Image>();
+
+        //update name
+        nameText.text = "";
+
+        //update description
+        nameDescript.text = "";
+
+        //update image
+        previewImage.sprite = null;
+
+        UpdateInventory();
+    }
+
     public void CloseInventory()
     {
+        
         IsInvenOpen = false;
         IsShowOpen = false;
-        ShowButton.SetActive(false);
-        InspectButton.SetActive(false);
-        InventoryUI.SetActive(false);
+        showUI.SetActive(false);
 
     }
+    /*
     public void OpenInventory()
     {
         IsInvenOpen = !IsInvenOpen;
@@ -106,7 +182,30 @@ public class InventorySystem : MonoBehaviour
 
         UpdateInventory();
     }
-    
+    public void OpenShow()
+    {
+        IsInvenOpen = true;
+        InventoryUI.SetActive(IsInvenOpen);
+        Preview.SetActive(false);
+        InspectButton.SetActive(true);
+        current_index = -1;
+
+        //update name
+        nameText.text = "";
+
+        //update description
+        nameDescript.text = "";
+
+        //update image
+        previewImage.sprite = null;
+
+        UpdateInventory();
+    }
+    */
+
+
+
+
     public void UpdateInventory()
     {
         int index = -1;
@@ -130,6 +229,8 @@ public class InventorySystem : MonoBehaviour
         {
             SampleButton.SetActive(false);
         }
+
+        
             //update name
             nameText.text = evidList[current_index].evidenceName;
 
@@ -169,12 +270,7 @@ public class InventorySystem : MonoBehaviour
     public void OpenSusList()
     {
         SuspectScreen.SetActive(!SuspectScreen.activeSelf);
-        /*
-        foreach (var slot in slots)
-        {
-            slot.color = Color.white;
-        }
-        */
+
     }
     public void ItemInspected()
     {
@@ -189,11 +285,10 @@ public class InventorySystem : MonoBehaviour
     public void ConfirmSus()
     {
         Debug.Log("confirm to show evidence to suspect");
-        OpenInventory();
+        OpenShowUI();
         IsShowOpen = true;
         SuspectScreen.SetActive(false);
         ShowButton.SetActive(true);
-        InspectButton.SetActive(false);
 
         
     }
