@@ -202,9 +202,9 @@ public class BasicInkExample : MonoBehaviour
 				}
 			}
 
-			if (tag.StartsWith("Interaction"))
+			if (tag.StartsWith("Interaction."))
 			{
-				var interactName = tag.Substring("Interaction.".Length, tag.Length - "Interaction.".Length).ToLower();
+				var interactName = tag.Substring("Interaction.".Length, tag.Length - "Interaction.".Length);
 
 				gameManager.Instance.handleInteractions(interactName);
 			}
@@ -247,10 +247,17 @@ public class BasicInkExample : MonoBehaviour
 	{
 		m_fullText = text;
 		m_textBox.text = "";
+		bool isTag = false;
 		foreach (var letter in text)
 		{
 			m_textBox.text += letter;
-			yield return null;
+			if (letter == '<')
+				isTag = true;
+			if (letter == '>')
+				isTag = false;
+
+			if (!isTag)
+				yield return null;
 		}
 
 		yield return new WaitForSeconds(3f);
@@ -306,6 +313,8 @@ void IsPlayingFalse()
 			}
 			
 		}
+
+
 
 		
 	}

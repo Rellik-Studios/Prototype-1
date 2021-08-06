@@ -78,10 +78,50 @@ public class gameManager : MonoBehaviour
 
     public void handleInteractions(string interactName)
     {
-        if (interactName == "hurt")
+        if (interactName == "Hurt")
         {
             //Add hurt here
             Debug.Log("Hurt");
+            return;
         }
+
+        var func = interactName.Substring(0, interactName.LastIndexOf('('));
+        var val = interactName.Substring(interactName.LastIndexOf('(') + 1, interactName.LastIndexOf(')') - func.Length - 1);
+        
+        StartCoroutine(func, val);
     }
+
+
+    IEnumerator addToInventory(string obect)
+    {
+        var evidences = GameObject.FindObjectsOfType<EvidenceInfo>();
+        foreach (var evidence in evidences)
+        {
+            if (evidence.evidenceName.ToLower() == obect.ToLower() && !collectedEvidences.ContainsKey(evidence.evidenceName))
+            {
+                collectedEvidences.Add(evidence.evidenceName, evidence);
+                break;
+            }
+        }
+        yield return null;
+    }
+
+    IEnumerator modify(string obect)
+    {
+        var append = obect.Substring(obect.Length - 1);
+        var evidence = obect.Substring(0, obect.Length - 1);
+
+        foreach (var itEvidence in collectedEvidences)
+        {
+            if (string.Equals(itEvidence.Key, evidence, StringComparison.CurrentCultureIgnoreCase))
+            {
+                if (Int32.TryParse(append, out int intAppend))
+                {
+                    itEvidence.Value.pointer = intAppend - 1;
+                }
+            }
+        }
+        yield return null;
+    }
+    
 }
