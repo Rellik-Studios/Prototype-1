@@ -23,10 +23,18 @@ public class InspectObject : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void Begin()
+    public void Begin(string objectToInspect)
     {
-        Instantiate(inspectableObject, transform.position + new Vector3(0f, 5f, 0f), Quaternion.identity);
-    }
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            var child = transform.GetChild(i);
+            if (child.name.ToLower() == "pivot_" + objectToInspect.ToLower())
+            {
+                child.gameObject.SetActive(true);
+                inspecting = child.gameObject;
+            }
+        }
+}
 
     public void End()
     {

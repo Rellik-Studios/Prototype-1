@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f4a7d29d-406c-4a61-b435-c6be08b56028" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Prefabs/InspectCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Prefabs/InspectCamera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Room 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Room 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +30,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/eb/b887d0e7/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/BaseRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/3d/a0cd6baa/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Himanshu/Scripts/inspectAndAppend.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/BaseRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -37,8 +44,9 @@
       <option value="$PROJECT_DIR$/Assets/BasicInkExample.cs" />
       <option value="$PROJECT_DIR$/Assets/gameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" />
-      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/inspectAndAppend.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vxlZUR8AIaw3PctewWHFPbvpSg" />
@@ -90,6 +98,7 @@
       <workItem from="1627511686522" duration="6097000" />
       <workItem from="1627527127343" duration="4976000" />
       <workItem from="1627965060294" duration="3432000" />
+      <workItem from="1628207836702" duration="1909000" />
     </task>
     <servers />
   </component>
