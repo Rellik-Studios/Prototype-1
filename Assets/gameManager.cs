@@ -22,6 +22,10 @@ public class gameManager : MonoBehaviour
     
     private void Update()
     {
+        if( Health ==0)
+        {
+            GetComponent<MainMenu>().LoseButton();
+        }
         if (Input.GetKeyDown(KeyCode.A))
         {
             foreach (var vEvidence in collectedEvidences)
@@ -42,6 +46,10 @@ public class gameManager : MonoBehaviour
         {
             StartStory(story);
         }
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            Health--;
+        }
     }
 
     private void Start()
@@ -55,7 +63,7 @@ public class gameManager : MonoBehaviour
         collectedEvidences = new Dictionary<string, EvidenceInfo>();
 
     }
-
+    public int Health = 3;
     public Dictionary<string, EvidenceInfo> collectedEvidences;
 
     public void addEvidence(EvidenceInfo _evidence)
@@ -81,6 +89,7 @@ public class gameManager : MonoBehaviour
         if (interactName == "Hurt")
         {
             //Add hurt here
+            Health--;
             Debug.Log("Hurt");
             return;
         }
