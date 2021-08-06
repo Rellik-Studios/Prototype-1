@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -57,6 +59,7 @@ public class gameManager : MonoBehaviour
     }
 
     public Dictionary<string, EvidenceInfo> collectedEvidences;
+    public EvidenceInfo selectedEvidence { get; set; }
 
     public void addEvidence(EvidenceInfo _evidence)
     {
@@ -122,6 +125,41 @@ public class gameManager : MonoBehaviour
             }
         }
         yield return null;
+    }
+
+    IEnumerator show(string obect)
+    {
+        var ink = GameObject.FindGameObjectWithTag("InkDialogue");
+        var invSys =  GameObject.FindObjectOfType<InventorySystem>();
+        while (selectedEvidence == null || selectedEvidence.evidenceName.ToLower() != obect.ToLower() )
+        {
+            if (selectedEvidence != null && selectedEvidence.evidenceName.ToLower() != obect.ToLower())
+            {
+                Debug.Log("Ya stupid");
+                //Hurt here?
+                selectedEvidence = null;
+                ink.gameObject.SetActive(true);
+                var currentText = ink.transform.GetChild(3).GetComponent<TMP_Text>().text;
+                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
+                yield return new WaitForSeconds(3);
+                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
+                ink.gameObject.SetActive(false);
+            }
+            ink.gameObject.SetActive(false);
+            if (!invSys.showUI.activeSelf)
+            {
+                invSys.ConfirmSus();
+            }
+
+            yield return null;
+
+        }
+
+        yield return new WaitForSeconds(2);
+        selectedEvidence = null;
+        ink.gameObject.SetActive(true);
+
+        
     }
     
 }
