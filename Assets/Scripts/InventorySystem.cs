@@ -324,7 +324,10 @@ public class InventorySystem : MonoBehaviour
         if (evidList[current_index] != null)
         {
             Debug.Log("you chose " + evidList[current_index].evidenceName);
+            gameManager.Instance.selectedEvidence = evidList[current_index];
             ConfirmEvidence();
+            CloseInventory();
+          
         }
 
         //if (evidList[current_index] != null)
@@ -341,6 +344,7 @@ public class InventorySystem : MonoBehaviour
             //        slots[current_index].color = Color.white;
             //    }
             //}
+            
     }
     public void ConfirmEvidence()
     {
