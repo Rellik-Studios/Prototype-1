@@ -44,6 +44,7 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //for testing purposes on whether the inventory menu is opened
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -220,14 +221,30 @@ public class InventorySystem : MonoBehaviour
    //update the preview shown in inventory system.
     void UpdatePreview()
     {
+        InspectButton.SetActive(false);
+        SampleButton.SetActive(false);
 
-        if(evidList[current_index].Inspected && !IsShowOpen)
+        if (Preview.activeSelf)
+        {
+         
+            if (evidList[current_index].InspectVisible)
+            {
+                InspectButton.SetActive(true);
+            }
+            else if(evidList[current_index].SampleVisible)
+            {
+                SampleButton.SetActive(true);
+            }
+            else
+            {
+                InspectButton.SetActive(false);
+                SampleButton.SetActive(false);
+            }
+        }
+
+        if (evidList[current_index].Inspected && evidList[current_index].SampleVisible)
         {
             SampleButton.SetActive(true);
-        }
-        else
-        {
-            SampleButton.SetActive(false);
         }
 
         
@@ -247,8 +264,13 @@ public class InventorySystem : MonoBehaviour
         
 
     }
+    public void Sampling()
+    {
+        AppendModify(evidList[current_index].descriptions.Count - 1);
+    }
     public void AppendModify(int num)
     {
+
         foreach (var vEvidence in gameManager.Instance.collectedEvidences)
         {
             if (vEvidence.Value == evidList[current_index])

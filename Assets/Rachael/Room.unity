@@ -165,6 +165,8 @@ MonoBehaviour:
     years left to live.\n\n"
   pointer: 0
   Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 0
 --- !u!65 &64425928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -449,6 +451,8 @@ MonoBehaviour:
     then to his son when he is of age.\r\n"
   pointer: 0
   Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 0
 --- !u!64 &147363291
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -828,6 +832,8 @@ MonoBehaviour:
     photo of the Duke as a little boy."
   pointer: 0
   Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 0
 --- !u!64 &270863276
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1205,6 +1211,7 @@ RectTransform:
   - {fileID: 1114196442}
   - {fileID: 2010729939}
   - {fileID: 179378379}
+  - {fileID: 1735132393}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1372,6 +1379,8 @@ MonoBehaviour:
     contents seem almost empty. Tested for no poison, only alcohol
   pointer: 0
   Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 1
 --- !u!65 &346927437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1413,6 +1422,8 @@ MonoBehaviour:
     cause of death is unclear.\n"
   pointer: 0
   Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 0
 --- !u!64 &388611997
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1459,6 +1470,8 @@ MonoBehaviour:
   - "The article writes about Duke\u2019s party. Claims that it started at 6 pm.\r\n\n"
   pointer: 0
   Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 0
 --- !u!64 &420870779
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3324,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340013d60a9b9404395daa24da9d6450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 4900000, guid: 81d55ff933a29234bbb4255d84a50c68, type: 3}
+  story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
 --- !u!1 &534960220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,7 +3684,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20786
+  m_Name: pb_Mesh87886
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4275,6 +4288,8 @@ MonoBehaviour:
     this photo. But he can say he isn't the person in the photo"
   pointer: 0
   Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 0
 --- !u!64 &1071415709
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4654,6 +4669,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140716653}
   m_CullTransparentMesh: 1
+--- !u!1 &1157239150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157239151}
+  - component: {fileID: 1157239153}
+  - component: {fileID: 1157239152}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1157239151
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157239150}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1735132393}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1157239152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157239150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Solve
+--- !u!222 &1157239153
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157239150}
+  m_CullTransparentMesh: 1
 --- !u!114 &1162968497 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6978793098933161906, guid: ec90e4a4376c4074da2facb992332997, type: 3}
@@ -4698,6 +4792,8 @@ MonoBehaviour:
     detected in the glass.\n"
   pointer: 0
   Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 1
 --- !u!65 &1207413457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4996,8 +5092,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 328936421}
         m_TargetAssemblyTypeName: InventorySystem, Assembly-CSharp
-        m_MethodName: AppendModify
-        m_Mode: 3
+        m_MethodName: Sampling
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5129,7 +5225,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20764
+  m_Name: pb_Mesh87864
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5466,6 +5562,8 @@ MonoBehaviour:
     other is standing
   pointer: 0
   Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 0
 --- !u!64 &1321446205
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5511,6 +5609,8 @@ MonoBehaviour:
     Knives like these were only given to the Duke\u2019s closest friends."
   pointer: 0
   Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 0
 --- !u!65 &1343612084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5737,6 +5837,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: InventorySystem, Assembly-CSharp
         m_MethodName: ConfirmSus
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2010729940}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6786,6 +6898,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7124785717883878917, guid: ec90e4a4376c4074da2facb992332997, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124785717883878917, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -6819,7 +6935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -797.2595
+      value: -328.4241
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6827,7 +6943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 12.083374
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6943,11 +7059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0.00012207
+      value: -629.4712
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.00048828
+      value: 0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6979,7 +7095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 12.8463745
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7015,7 +7131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1121.4983
+      value: 954.7477
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.y
@@ -7023,7 +7139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.25073242
+      value: -3.3743
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7195,6 +7311,139 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec90e4a4376c4074da2facb992332997, type: 3}
+--- !u!1 &1735132392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735132393}
+  - component: {fileID: 1735132396}
+  - component: {fileID: 1735132395}
+  - component: {fileID: 1735132394}
+  m_Layer: 5
+  m_Name: SolveButtton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1735132393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735132392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.2015, y: 2.2015, z: 2.2015}
+  m_Children:
+  - {fileID: 1157239151}
+  m_Father: {fileID: 328936425}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -858, y: 193}
+  m_SizeDelta: {x: 69.8708, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1735132394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735132392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1735132395}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InventorySystem, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1735132395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735132392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1735132396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735132392}
+  m_CullTransparentMesh: 1
 --- !u!1 &1736154910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7124785718168694305, guid: ec90e4a4376c4074da2facb992332997, type: 3}
@@ -7375,6 +7624,8 @@ MonoBehaviour:
     glass. Most likely the Duke\u2019s. Testing revealed traces of poison."
   pointer: 0
   Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 1
 --- !u!1 &1813068831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
@@ -7416,6 +7667,8 @@ MonoBehaviour:
     \n"
   pointer: 0
   Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 0
 --- !u!1 &1817753624
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,7 +7975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tick: 0
   m_textBox: {fileID: 767829629}
-  m_talker: {fileID: 0}
+  m_talker: {fileID: 1010468847}
   m_choices: {fileID: 1740810445}
   m_inkJsonAsset: {fileID: 4900000, guid: 81d55ff933a29234bbb4255d84a50c68, type: 3}
   m_canvas: {fileID: 1908123726}
@@ -8169,7 +8422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2009679605
 Transform:
   m_ObjectHideFlags: 0
@@ -8235,7 +8488,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 810.8, y: -367.3}
-  m_SizeDelta: {x: 233, y: 194}
+  m_SizeDelta: {x: 267, y: 312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010729940
 MonoBehaviour:
@@ -8325,7 +8578,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12cd3c4faaf385548afb094bd65d01dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99e73bc44b5b2754c938faeb8d05ea22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8379,7 +8632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 882.4363, y: 458.73395}
+  m_AnchoredPosition: {x: 620.26, y: 509}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2029892795
@@ -8437,6 +8690,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2010729940}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2029892796
 MonoBehaviour:
@@ -9112,7 +9377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -797.2595
+      value: -328.4241
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9120,7 +9385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 12.083374
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718168694318, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9232,11 +9497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0.00012207
+      value: -629.4712
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.00048828
+      value: 0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9268,7 +9533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 12.8463745
       objectReference: {fileID: 0}
     - target: {fileID: 7124785718969146997, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9304,7 +9569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1121.4983
+      value: 954.7477
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9312,7 +9577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.25073242
+      value: -3.3743
       objectReference: {fileID: 0}
     - target: {fileID: 7124785719254569773, guid: ec90e4a4376c4074da2facb992332997, type: 3}
       propertyPath: m_AnchoredPosition.y
