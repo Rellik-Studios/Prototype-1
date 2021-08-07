@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -84,10 +85,6 @@ public class InventorySystem : MonoBehaviour
         {
             Preview.SetActive(false);
         }
-
-        
-
-
     }
     public void OpenInventUI()
     {
@@ -219,7 +216,7 @@ public class InventorySystem : MonoBehaviour
     }
 
    //update the preview shown in inventory system.
-    void UpdatePreview()
+    public void UpdatePreview()
     {
         InspectButton.SetActive(false);
         SampleButton.SetActive(false);
@@ -284,6 +281,16 @@ public class InventorySystem : MonoBehaviour
             }
         }
     }
+
+    public void InspectObject()
+    {
+        foreach (var vEvidence in gameManager.Instance.collectedEvidences.Where(vEvidence =>
+            vEvidence.Value == evidList[current_index]))
+        {
+            FindObjectOfType<InspectObject>().Begin(vEvidence.Value.evidenceName);
+        }
+    }
+
     public void PickSus(int num)
     {
         SusNum = num;
