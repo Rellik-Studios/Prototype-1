@@ -25,26 +25,35 @@ public class InspectObject : MonoBehaviour
 
     public void Begin(string objectToInspect)
     {
-        for (int i = 0; i < transform.childCount; i++)
+        GetComponent<Camera>().enabled = true;
+        transform.GetChild(0).gameObject.SetActive(true); 
+        for (var i = 0; i < transform.childCount; i++)
         {
             var child = transform.GetChild(i);
-            if (child.name.ToLower() == "pivot_" + objectToInspect.ToLower())
+            if (child.name.ToLower() == "pivot_" + objectToInspect.ToLower().Replace(" ", "")) 
             {
                 child.gameObject.SetActive(true);
                 inspecting = child.gameObject;
             }
         }
-}
+    }
 
     public void End()
-    {
-        Destroy(inspecting);        
+    { 
+        GetComponent<Camera>().enabled = false;
+        GameObject.FindObjectOfType<InventorySystem>().UpdatePreview();
+        transform.GetChild(0).gameObject.SetActive(false);
+        inspecting.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            End();
+            
+        }
         if (Input.GetMouseButton(1))
         {
             Cursor.lockState = CursorLockMode.Locked;
