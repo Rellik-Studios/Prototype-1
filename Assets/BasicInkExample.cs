@@ -294,7 +294,7 @@ void IsPlayingFalse()
 
 		if (text.Contains(".0"))
 		{
-			var check = choiceText.text.Substring(choiceText.text.LastIndexOf('.') + 2);
+			var check = choiceText.text.Substring(choiceText.text.LastIndexOf('.') + 2).ToLower();
 			var append = check.Substring(check.Length - 1);
 			check = check.Substring(0, check.Length - 1);
 			if (gameManager.Instance.collectedEvidences.TryGetValue(check, out EvidenceInfo evidenceInfo))

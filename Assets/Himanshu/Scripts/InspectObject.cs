@@ -7,7 +7,7 @@ public class InspectObject : MonoBehaviour
     public float mouseSensitivity;
 
     private Camera _camera;
-    
+    private GameObject ink;
     public GameObject inspectableObject;
 
     [SerializeField] private GameObject inspecting;
@@ -19,12 +19,17 @@ public class InspectObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ink = GameObject.FindGameObjectWithTag("CanvasInspect");
+        ink.gameObject.SetActive(false);
+        
         _camera = GetComponent<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Begin(string objectToInspect)
     {
+        ink.gameObject.SetActive(true);
+        ink.transform.GetChild(0).gameObject.SetActive(false);
         GetComponent<Camera>().enabled = true;
         transform.GetChild(0).gameObject.SetActive(true); 
         for (var i = 0; i < transform.childCount; i++)

@@ -72,7 +72,7 @@ public class gameManager : MonoBehaviour
     public void addEvidence(EvidenceInfo _evidence)
     {
         if(!collectedEvidences.ContainsKey(_evidence.evidenceName))
-            collectedEvidences.Add(_evidence.evidenceName, _evidence);
+            collectedEvidences.Add(_evidence.evidenceName.ToLower().Replace(" ", ""), _evidence);
     }
 
     public void modifyEvidence(EvidenceInfo _evidence)
