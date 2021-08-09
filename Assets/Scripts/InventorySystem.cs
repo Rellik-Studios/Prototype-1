@@ -125,6 +125,7 @@ public class InventorySystem : MonoBehaviour
     }
     public void OpenShowUI()
     {
+        InventoryButton.GetComponent<Button>().interactable = false;
         IsInvenOpen = !IsInvenOpen;
         showUI.SetActive(IsInvenOpen);
 
@@ -157,6 +158,7 @@ public class InventorySystem : MonoBehaviour
         
         IsInvenOpen = false;
         IsShowOpen = false;
+        InventoryButton.GetComponent<Button>().interactable = true;
         showUI.SetActive(false);
 
     }
