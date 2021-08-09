@@ -16,9 +16,14 @@ public class DetectObjects : MonoBehaviour
 
     [CanBeNull] private Renderer m_revert;
     private List<Color> defaultColor;
+
+    public SuspectsStories talkingTo;
+    private CharacterController _controller;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         _camera = Camera.main;
         defaultColor = new List<Color>();
     }
@@ -72,7 +77,10 @@ public class DetectObjects : MonoBehaviour
                 else if (hit.collider.TryGetComponent<SuspectsStories>(out SuspectsStories suspects))
                 {
                     if (Input.GetMouseButtonDown(0))
+                    {
                         gameManager.Instance.StartStory(suspects.GetStory());
+                        talkingTo = suspects;
+                    }
                 }
                 else
                 {

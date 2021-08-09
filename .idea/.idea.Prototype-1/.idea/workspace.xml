@@ -8,8 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BasicInkExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BasicInkExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Himanshu/RoomHim.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/RoomHim.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Scripts/inspectAndAppend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Scripts/inspectAndAppend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SuspectsStories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SuspectsStories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/BrotherTestimony 1.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/BrotherTestimony 1.ink" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/BrotherTestimony 1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/BrotherTestimony 1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/BrotherTestimony.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/BrotherTestimony.ink" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/BrotherTestimony.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/BrotherTestimony.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/BuildUP.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/BuildUP.ink" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Story/BuildUP.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/BuildUP.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Story/Maid_Investigation.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/Maid_Investigation.ink" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Story/Maid_Investigation.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Story/Maid_Investigation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/gameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameManager.cs" afterDir="false" />
@@ -36,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/eb/b887d0e7/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/3d/a0cd6baa/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/BaseRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,8 +56,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/inspectAndAppend.cs" />
-      <option value="$PROJECT_DIR$/Assets/gameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/BasicInkExample.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" />
+      <option value="$PROJECT_DIR$/Assets/gameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SuspectsStories.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vxlZUR8AIaw3PctewWHFPbvpSg" />
@@ -81,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17628">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13564">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17628" />
+      <option name="pid" value="13564" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -105,7 +114,8 @@
       <workItem from="1627965060294" duration="3432000" />
       <workItem from="1628255645045" duration="2217000" />
       <workItem from="1628258770138" duration="9441000" />
-      <workItem from="1628388858288" duration="1970000" />
+      <workItem from="1628388858288" duration="5218000" />
+      <workItem from="1628468877400" duration="8443000" />
     </task>
     <servers />
   </component>
@@ -134,32 +144,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs</url>
-          <line>333</line>
-          <properties documentPath="D:\Repos\Prototype-1\Assets\Scripts\InventorySystem.cs" initialLine="326" containingFunctionPresentation="method 'PickEvidence'">
-            <startOffsets>
-              <option value="8455" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8519" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
-          <line>133</line>
-          <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="129" containingFunctionPresentation="method 'show'">
-            <startOffsets>
-              <option value="3512" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3607" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs</url>
           <line>32</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\Himanshu\Scripts\InspectObject.cs" initialLine="27" containingFunctionPresentation="method 'Begin'">
@@ -186,30 +170,30 @@
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/BasicInkExample.cs</url>
-          <line>301</line>
-          <properties documentPath="D:\Repos\Prototype-1\Assets\BasicInkExample.cs" initialLine="301" containingFunctionPresentation="method 'CreateChoiceView'">
+          <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
+          <line>164</line>
+          <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="148" containingFunctionPresentation="method 'show'">
             <startOffsets>
-              <option value="7608" />
+              <option value="4566" />
             </startOffsets>
             <endOffsets>
-              <option value="7647" />
+              <option value="4586" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/BasicInkExample.cs</url>
-          <line>299</line>
-          <properties documentPath="D:\Repos\Prototype-1\Assets\BasicInkExample.cs" initialLine="299" containingFunctionPresentation="method 'CreateChoiceView'">
+          <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
+          <line>137</line>
+          <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="137" containingFunctionPresentation="method 'modify'">
             <startOffsets>
-              <option value="7504" />
+              <option value="3464" />
             </startOffsets>
             <endOffsets>
-              <option value="7598" />
+              <option value="3511" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

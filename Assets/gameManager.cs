@@ -69,6 +69,21 @@ public class gameManager : MonoBehaviour
     public Dictionary<string, EvidenceInfo> collectedEvidences;
     public EvidenceInfo selectedEvidence { get; set; }
 
+    public int isOnAppend(string _evidenceName, string _append)
+    {
+        if (collectedEvidences.TryGetValue(_evidenceName, out EvidenceInfo evidenceInfo))
+        {
+            return (evidenceInfo.pointer >= Int32.Parse(_append) - 1)?1:0;
+        }
+        else return 0;
+    }
+
+    IEnumerator talked(string b)
+    {
+        GetComponent<DetectObjects>().talkingTo.talked = true;
+        yield return null;
+    }
+
     public void addEvidence(EvidenceInfo _evidence)
     {
         if(!collectedEvidences.ContainsKey(_evidence.evidenceName))
@@ -140,19 +155,21 @@ public class gameManager : MonoBehaviour
     {
         var ink = GameObject.FindGameObjectWithTag("InkDialogue");
         var invSys =  GameObject.FindObjectOfType<InventorySystem>();
-        while (selectedEvidence == null || selectedEvidence.evidenceName.ToLower() != obect.ToLower() )
+        while (selectedEvidence == null || selectedEvidence.evidenceName.ToLower().Replace(" ","") != obect.ToLower() )
         {
-            if (selectedEvidence != null && selectedEvidence.evidenceName.ToLower() != obect.ToLower())
+            if (selectedEvidence != null && selectedEvidence.evidenceName.ToLower().Replace(" ","") != obect.ToLower())
             {
                 Debug.Log("Ya stupid");
                 //Hurt here?
-                selectedEvidence = null;
-                ink.gameObject.SetActive(true);
-                var currentText = ink.transform.GetChild(3).GetComponent<TMP_Text>().text;
-                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
+                //ink.transform.parent.gameObject.SetActive(true);
+                ink.SetActive(true);
+                
+                var currentText = ink.transform.GetChild(5).GetComponent<TMP_Text>().text;
+                ink.transform.GetChild(5).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
                 yield return new WaitForSeconds(3);
-                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
+                ink.transform.GetChild(5).GetComponent<TMP_Text>().text = currentText;
                 ink.gameObject.SetActive(false);
+                selectedEvidence = null;
             }
             ink.gameObject.SetActive(false);
             if (!invSys.showUI.activeSelf)
