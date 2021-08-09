@@ -11,11 +11,11 @@
                         Eye to eye. #Character.Brother #Emotion.brother_angry 
                         I see, so  you two weren't close... #Character.Protagnist
                         Let's just say he had it coming. #Character.Brother #Emotion.brother_neutral
-    *[Show Knife.0knife2] Can you tell me about this knife?  
-    #Interaction.show(Knife) #Skip.0
+                        
+    *[Show Knife.0knife2]  #Interaction.show(Knife) #Skip.0
         Can you tell me about this knife? #Character.Protagnist
         That's my brother's signature design. #Character.Brother #Emotion.brother_neutral
-        He only gives these knives to the people closest to him. #Character.Brother #Emotion.brother_sad
+        He only gives these knives to the <color=red><b>people closest to him</b></color>. #Character.Brother #Emotion.brother_sad  #Interaction.modify(knife3)
         What about you, do you have one? #Character.Protagnist
         ...You should be getting on with your investigation, Detective. #Character.Brother #Emotion.brother.sad
         Hm... #Character.Protagnist
