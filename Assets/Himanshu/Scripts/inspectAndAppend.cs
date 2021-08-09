@@ -20,17 +20,17 @@ public class inspectAndAppend : MonoBehaviour
         ink = GameObject.FindGameObjectWithTag("CanvasInspect");
         //ink.gameObject.SetActive(false);
         //ink.transform.GetChild(0).gameObject.SetActive(false);
-        //Cursor.SetCursor(cursorDefault, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursorDefault, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void OnMouseEnter()
     {
-        //Cursor.SetCursor(cursorHover, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursorHover, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void OnMouseExit()
     {
-        //Cursor.SetCursor(cursorDefault, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursorDefault, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private IEnumerator OnMouseDown()
