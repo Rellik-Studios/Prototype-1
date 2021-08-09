@@ -4688,7 +4688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
       propertyPath: m_Name
-      value: Dead Body
+      value: Body
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
       propertyPath: m_Layer
@@ -7722,7 +7722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Name
-      value: Tipped Wine Glass
+      value: Tipped Glass
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Layer
@@ -8575,7 +8575,7 @@ PrefabInstance:
       objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Name
-      value: Pills
+      value: Pill
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Layer

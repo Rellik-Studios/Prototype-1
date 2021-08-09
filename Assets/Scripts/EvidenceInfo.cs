@@ -23,6 +23,7 @@ public class EvidenceInfo : MonoBehaviour
     void Start()
     {
         evidenceImage = Resources.Load<Sprite>("Images/" + gameObject.name.ToLower().Replace(" ", " "));
+
         if(evidenceImage == null)
         {
             evidenceImage = Resources.Load<Sprite>("Images/knife");
