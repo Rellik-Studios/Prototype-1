@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -244,6 +244,7 @@ MonoBehaviour:
   sceneController: {fileID: 2009679603}
   ink: {fileID: 1908123725}
   story: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
+  Health: 3
 --- !u!114 &99772420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3390,6 +3391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
+  talked: 0
 --- !u!1 &534960220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,7 +3891,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118806
+  m_Name: pb_Mesh53812
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5995,7 +5997,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118784
+  m_Name: pb_Mesh53790
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

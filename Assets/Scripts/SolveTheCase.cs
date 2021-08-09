@@ -8,6 +8,8 @@ public class SolveTheCase : MonoBehaviour
     private SuspectsStories[] suspects;
     public GameObject solvebutton;
     public GameObject[] Hearts;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,14 +52,14 @@ public class SolveTheCase : MonoBehaviour
     }
     public bool RequiredEvid()
     {
-        return gameManager.Instance.collectedEvidences["Senior detective autopsy"].pointer == 0 &&
-               gameManager.Instance.collectedEvidences["Standing glass"].pointer ==2 &&
-               gameManager.Instance.collectedEvidences["Tipped-over glass"].pointer == 2 &&
-               gameManager.Instance.collectedEvidences["Wine bottle"].pointer ==1;
+        return gameManager.Instance.collectedEvidences["seniordetectiveautopsy"].pointer == 0 &&
+               gameManager.Instance.collectedEvidences["standingglass"].pointer ==2 &&
+               gameManager.Instance.collectedEvidences["tipped-overglass"].pointer == 2 &&
+               gameManager.Instance.collectedEvidences["winebottle"].pointer ==1;
     }
     public bool RequiredForSen()
     {
-        return GetEvidence("Senior detective autopsy").pointer >= GetEvidence("Senior detective autopsy").descriptions.Count;
+        return GetEvidence("seniordetectiveautopsy").pointer >= GetEvidence("seniordetectiveautopsy").descriptions.Count;
     }
     public bool AllSuspectsTalked()
     {
