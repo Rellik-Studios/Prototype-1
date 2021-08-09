@@ -11,12 +11,12 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
     
     *[Is anything missing.0MissingItem1]
      There was a box in that spot, it was very important to the Duke. #Emotion.maid_neutral #Character.Maid
-     I recall it was a pretty little box with <color=red><b>golden details</b></color>. #Interaction.modify(RippedPhoto2)
+     I recall it was a pretty little box with <color=red><b>golden details</b></color>. #Interaction.modify(MissingItem2)
      You didn't snatch it did you? I'd be honest if I were you. #Emotion.maid_irritated #Character.Maid
      No ma'am. #Character.Protagonist
     ->DONE
     *[Show torn Photo.0RippedPhoto2]
-    blah #Interaction.show(rippedPhoto) #Skip.0
-    Yes that is the Duke as a child, and he's holding the box that's missing...#Emotion.maid_neutral #Character.Maid
+    Yes that is the Duke as a child, and he's holding the box that's missing...  #Emotion.maid_neutral #Character.Maid #Interaction.show(rippedPhoto) 
+   #Interaction.modify(MissingItem3)
     ->DONE
 ->DONE
