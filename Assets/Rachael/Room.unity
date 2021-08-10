@@ -235,6 +235,7 @@ MonoBehaviour:
   Inventory: {fileID: 1114196441}
   ShowUI: {fileID: 179378378}
   Dialogue: {fileID: 2009679603}
+  talkingTo: {fileID: 0}
 --- !u!4 &99772421
 Transform:
   m_ObjectHideFlags: 0
@@ -501,7 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340013d60a9b9404395daa24da9d6450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 4900000, guid: 59d6ea14a4c40bc4ba8b64a4e7d9de32, type: 3}
+  story: {fileID: 4900000, guid: 99f66833da350544dbc66c2e07b7faf0, type: 3}
+  storyTalked: {fileID: 4900000, guid: 59d6ea14a4c40bc4ba8b64a4e7d9de32, type: 3}
   talked: 0
 --- !u!65 &143531867
 BoxCollider:
@@ -3557,6 +3559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
+  storyTalked: {fileID: 4900000, guid: 21cdaf7f460e276448455aa904b4f196, type: 3}
   talked: 0
 --- !u!1 &534960220
 GameObject:
@@ -10725,6 +10728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 4900000, guid: 6d085d5d4105fc64f968dcde46769f25, type: 3}
+  storyTalked: {fileID: 4900000, guid: 1d4294948f02c544881de3104179c714, type: 3}
   talked: 0
 --- !u!65 &2112910979
 BoxCollider:

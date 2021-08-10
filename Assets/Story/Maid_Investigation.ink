@@ -1,11 +1,13 @@
 VAR missingItem = true
 VAR rippedPhoto = true
+VAR flag = false
 VAR done = 0
 ->Stuff
 === Stuff ===
 
 missingitem1 #Function.setmissingitem 
 rippedphoto2 #Function.setrippedphoto 
+missingitem2 #Function.setflag
 -I'm the head maid of the Duke's mansion. #Emotion.maid_neutral #Character.Maid
 If you need anything let me know. #Emotion.maid_neutral #Character.Maid
 And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
@@ -29,12 +31,13 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
     ~done++
 }
 
-     I recall it was a pretty little box with <color=red><b>golden details</b></color>. #Interaction.modify(RippedPhoto2)
+
+     I recall it was a pretty little box with <color=red><b>golden details</b></color>. 
      You didn't snatch it did you? I'd be honest if I were you. #Emotion.maid_irritated #Character.Maid
      No ma'am. #Character.Protagonist
      
     ->Stuff
-    *{rippedPhoto} [Show Ripped Photo]
+    *{rippedPhoto} {flag} [Show Ripped Photo]
     Yes that is the Duke as a child, and he's holding the box that's missing...#Emotion.maid_neutral #Character.Maid #Interaction.show(rippedPhoto) #Interaction.modify(missingitem3)
  {done ==1:
     #Interaction.talked(true)
@@ -50,3 +53,7 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
 
 === function setrippedphoto(value)
 ~ rippedPhoto = value
+
+
+=== function setflag(value)
+~flag = value
