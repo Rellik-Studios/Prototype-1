@@ -59,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.build.unityPlugin" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -99,7 +99,7 @@
       <workItem from="1628258770138" duration="9441000" />
       <workItem from="1628388858288" duration="5218000" />
       <workItem from="1628468877400" duration="8443000" />
-      <workItem from="1628555016446" duration="833000" />
+      <workItem from="1628555016446" duration="1835000" />
     </task>
     <servers />
   </component>
