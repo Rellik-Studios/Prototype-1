@@ -133,7 +133,7 @@ public class BasicInkExample : MonoBehaviour
 
 			// Display the text on screen!
 			CreateContentView(text);
-			canProceed = false;
+			//canProceed = false;
 		}
 
 		// Display all the choices, if there are any!
@@ -170,7 +170,7 @@ public class BasicInkExample : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
-
+		var skip = false;
 		foreach (var tag in story.currentTags)
 		{
 			if (tag.StartsWith("Character."))
@@ -216,6 +216,13 @@ public class BasicInkExample : MonoBehaviour
 				Invoke("CanProceed", skipTimer);
 			}
 
+			if (tag.StartsWith("Function."))
+			{
+				var functionName = tag.Substring("Function.".Length, tag.Length - "Function.".Length);
+				story.EvaluateFunction(functionName, gameManager.Instance.isOnAppend(text.Substring(0, text.Length - 1), text.Substring(text.Length - 1)));
+				skip = true;
+			}
+
 
 		}
 
@@ -223,11 +230,21 @@ public class BasicInkExample : MonoBehaviour
 		{
 			text = text.Substring(0, (text.LastIndexOf('.')));
 		}
-		StopCoroutine(TypeSentence(""));
-		StartCoroutine(TypeSentence(text));
-		Text storyText = Instantiate(m_textPrefab) as Text;
+
+		if (!skip)
+		{
+			StopCoroutine(TypeSentence(""));
+			StartCoroutine(TypeSentence(text));
+			canProceed = false;
+		}
+		else
+		{
+			canProceed = true;
+		}
+		
+		//Text storyText = Instantiate(m_textPrefab) as Text;
 		//storyText.text = text;
-		storyText.transform.SetParent(m_canvas.transform, true);
+		//storyText.transform.SetParent(m_canvas.transform, true);
 
 
 		m_isPlaying = true;

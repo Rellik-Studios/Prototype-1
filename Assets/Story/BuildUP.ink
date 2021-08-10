@@ -82,24 +82,28 @@ What really killed him was...
     +[Wine tipped] #Skip.2
         We found traces of poison when we sampled the tipped glass! #Character.Protagnist
         So? This doesn't change anything, the man is clearly guilty!
-    -blah
+    -->Finale
 ->DONE
  
- In the autopsy you stated that the victim was stabbed to death! (protag)
- You never mentioned any poison at all!(protag)
- Oh really! My bad, I must have made a mistake. (sen)
- You, an experienced detective with 20 years in the business making a mistake this foolish? (protag)
- The one who lied to protect himself... (protag)
- And pinned the crime on the Duke's brother... (protag)
- The one who really killed the Duke... (protag)
- was you, Detective Sen Akito! (protag)
+ === Finale ===
+ This is my proof #Character.Protagonist
+ *[Show decisive evidence] #Interaction.show(autopsy) #Skip.1
+ In the autopsy you stated that the victim was stabbed to death! #Character.Protagonist 
  
- You-you don't have any proof! (sen)
+ You never mentioned any poison at all!#Character.Protagonist
+ Oh really! My bad, I must have made a mistake. #Emotion.sen_nervous #Character.Sen
+ You, an experienced detective with 20 years in the business making a mistake this foolish? #Character.Protagonist
+ The one who lied to protect himself... #Character.Protagonist
+ And pinned the crime on the Duke's brother... #Character.Protagonist
+ The one who really killed the Duke... #Character.Protagonist
+ was you, Detective Sen Akito! #Character.Protagonist
  
- Oh yeah? So you don't mind if we search your apartment for a certain "item" right? (protag)
+ You-you don't have any proof! #Emotion.sen_nervous #Character.Sen
  
- Grr... Foiled by a rookie. (sen_scared)
-
+ Oh yeah? So you don't mind if we search your apartment for a certain "item" right? #Character.Protagonist
+ 
+ Grr... Foiled by a rookie. #Emotion.Sen_angry #Character.Sen
+->DONE
     
 -> END
 

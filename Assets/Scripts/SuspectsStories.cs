@@ -5,7 +5,8 @@ using UnityEngine;
 public class SuspectsStories : MonoBehaviour
 {
     [SerializeField] TextAsset story;
-    [SerializeField] bool talked = false;
+    [SerializeField] TextAsset storyTalked;
+    public bool talked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,6 @@ public class SuspectsStories : MonoBehaviour
 
     public TextAsset GetStory()
     {
-        talked = true;
-        return story;
+        return talked ? storyTalked : story;
     }
 }
