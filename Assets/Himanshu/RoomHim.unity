@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -264,6 +264,7 @@ MonoBehaviour:
   Inventory: {fileID: 1114196441}
   ShowUI: {fileID: 179378378}
   Dialogue: {fileID: 2009679603}
+  talkingTo: {fileID: 0}
 --- !u!4 &99772421
 Transform:
   m_ObjectHideFlags: 0
@@ -3391,8 +3392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
-  storyTalked: {fileID: 0}
+  storyTalked: {fileID: 4900000, guid: 21cdaf7f460e276448455aa904b4f196, type: 3}
   talked: 0
+  talkedOnce: 0
 --- !u!1 &534960220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,7 +3894,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118806
+  m_Name: pb_Mesh38192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4339,7 +4341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Name
-      value: Standing Wine Glass
+      value: Tipped Wine Glass
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Layer
@@ -5998,7 +6000,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118784
+  m_Name: pb_Mesh38170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6385,6 +6387,7 @@ MonoBehaviour:
   story: {fileID: 4900000, guid: 99f66833da350544dbc66c2e07b7faf0, type: 3}
   storyTalked: {fileID: 4900000, guid: 59d6ea14a4c40bc4ba8b64a4e7d9de32, type: 3}
   talked: 0
+  talkedOnce: 0
 --- !u!65 &1337836877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6628,7 +6631,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   append:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1781445651}
+        m_TargetAssemblyTypeName: EvidenceInfo, Assembly-CSharp
+        m_MethodName: ModifyAppend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   cursorDefault: {fileID: 2800000, guid: 57b54dc6b4b89fd4d9d9a2fe2a901ad6, type: 3}
   cursorHover: {fileID: 2800000, guid: 04c73266bc004a641842e950291118e7, type: 3}
   text: 
@@ -6662,12 +6677,60 @@ PrefabInstance:
       value: There is a W on this knife
       objectReference: {fileID: 0}
     - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1343612083}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 328936421}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ItemInspected
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: InventorySystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 447901902, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: text
+      value: There are fingerprints on this glass.
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1446993520, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_IsActive
