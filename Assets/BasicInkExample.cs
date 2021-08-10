@@ -346,7 +346,7 @@ void IsPlayingFalse()
 
 	private void Update()
 	{
-		if (!m_audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space) && transform.parent.GetChild(0).gameObject.activeSelf)
+		if (!m_audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space) && GameObject.FindGameObjectWithTag("InkDialogue").activeSelf)
 		{
 			if (m_textBox.text == m_fullText) canProceed = true;
 		}

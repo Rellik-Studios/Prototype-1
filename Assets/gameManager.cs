@@ -86,7 +86,7 @@ public class gameManager : MonoBehaviour
 
     public void addEvidence(EvidenceInfo _evidence)
     {
-        if(!collectedEvidences.ContainsKey(_evidence.evidenceName))
+        if(!collectedEvidences.ContainsKey(_evidence.evidenceName.ToLower().Replace(" ", "")))
             collectedEvidences.Add(_evidence.evidenceName.ToLower().Replace(" ", ""), _evidence);
     }
 
@@ -122,11 +122,11 @@ public class gameManager : MonoBehaviour
     IEnumerator addToInventory(string obect)
     {
         var evidences = GameObject.FindObjectsOfType<EvidenceInfo>();
-        foreach (var evidence in evidences)
+          foreach (var evidence in evidences)
         {
-            if (evidence.evidenceName.ToLower() == obect.ToLower() && !collectedEvidences.ContainsKey(evidence.evidenceName))
+            if (evidence.evidenceName.ToLower().Replace(" ", "") == obect.ToLower().Replace(" ", "") && !collectedEvidences.ContainsKey(evidence.evidenceName))
             {
-                collectedEvidences.Add(evidence.evidenceName, evidence);
+                collectedEvidences.Add(evidence.evidenceName.ToLower().Replace(" ", ""), evidence);
                 break;
             }
         }
@@ -160,6 +160,7 @@ public class gameManager : MonoBehaviour
             if (selectedEvidence != null && selectedEvidence.evidenceName.ToLower().Replace(" ","") != obect.ToLower())
             {
                 Debug.Log("Ya stupid");
+                Health--;
                 //Hurt here?
                 //ink.transform.parent.gameObject.SetActive(true);
                 ink.SetActive(true);
