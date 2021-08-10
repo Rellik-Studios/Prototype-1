@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b29d70dc459d1d64da143904d06d29a2
+guid: 11ce8b2a4042bdb43b5eaa3e02325ad4
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: SM_Table_SM_TableMat
-    second: {fileID: 2100000, guid: 8b58398598679994f9cc2a412140bd64, type: 2}
+      name: SM_Lamp_SM_LampMat
+    second: {fileID: 2100000, guid: 1cbaf48d590d74e41beb6d1bb614b4ab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
