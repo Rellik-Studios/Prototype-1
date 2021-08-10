@@ -145,6 +145,7 @@ public class gameManager : MonoBehaviour
             if (selectedEvidence != null && selectedEvidence.evidenceName.ToLower().Replace(" ", "") != obect.ToLower().Replace(" ", ""))
             {
                 Debug.Log("Ya stupid");
+                Health--;
                 //Hurt here?
                 selectedEvidence = null;
                 ink.gameObject.SetActive(true);
