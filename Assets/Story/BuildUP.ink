@@ -87,7 +87,7 @@ What really killed him was...
  
  === Finale ===
  This is my proof #Character.Protagonist
- *[Show decisive evidence] #Interaction.show(autopsy) #Skip.1
+ *[Show decisive evidence] #Interaction.show(Seniordetectiveautopsy) #Skip.1
  In the autopsy you stated that the victim was stabbed to death! #Character.Protagonist 
  
  You never mentioned any poison at all!#Character.Protagonist

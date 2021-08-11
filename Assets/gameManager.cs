@@ -192,10 +192,10 @@ public class gameManager : MonoBehaviour
                 //ink.transform.parent.gameObject.SetActive(true);
                 ink.SetActive(true);
                 
-                var currentText = ink.transform.GetChild(5).GetComponent<TMP_Text>().text;
-                ink.transform.GetChild(5).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
+                var currentText = ink.transform.GetChild(3).GetComponent<TMP_Text>().text;
+                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
                 yield return new WaitForSeconds(3);
-                ink.transform.GetChild(5).GetComponent<TMP_Text>().text = currentText;
+                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
                 ink.gameObject.SetActive(false);
                 selectedEvidence = null;
             }
