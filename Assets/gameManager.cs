@@ -61,12 +61,15 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
+        inkDialogeCanvas = GameObject.FindGameObjectWithTag("InkDialogue");
+
         Instance = this;
         collectedEvidences = new Dictionary<string, EvidenceInfo>();
 
     }
     public int Health = 3;
     public Dictionary<string, EvidenceInfo> collectedEvidences;
+    private GameObject inkDialogeCanvas;
     public EvidenceInfo selectedEvidence { get; set; }
 
     public int isOnAppend(string _evidenceName, string _append)
@@ -86,8 +89,24 @@ public class gameManager : MonoBehaviour
 
     public void addEvidence(EvidenceInfo _evidence)
     {
-        if(!collectedEvidences.ContainsKey(_evidence.evidenceName.ToLower().Replace(" ", "")))
+        if (!collectedEvidences.ContainsKey(_evidence.evidenceName.ToLower().Replace(" ", "")))
+        {
             collectedEvidences.Add(_evidence.evidenceName.ToLower().Replace(" ", ""), _evidence);
+            inkDialogeCanvas.transform.parent.gameObject.SetActive(true);
+            inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(false);
+
+            StartCoroutine(evidenceAddedText(_evidence.evidenceName));
+        }
+    }
+
+    IEnumerator evidenceAddedText(string evidenceName)
+    {
+        var currentText = inkDialogeCanvas.transform.GetChild(5).GetComponent<TMP_Text>().text;
+        inkDialogeCanvas.transform.GetChild(5).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
+        yield return new WaitForSeconds(3);
+        inkDialogeCanvas.transform.GetChild(5).GetComponent<TMP_Text>().text = currentText;
+        inkDialogeCanvas.transform.parent.gameObject.SetActive(false);
+        inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(true);
     }
 
     public void modifyEvidence(EvidenceInfo _evidence)
