@@ -16,6 +16,7 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] private TextAsset story;
 
+    
     public void StartStory(TextAsset _story)
     {
         ink.m_inkJsonAsset = _story; 
@@ -102,10 +103,11 @@ public class gameManager : MonoBehaviour
 
     IEnumerator evidenceAddedText(string evidenceName)
     {
-        var currentText = inkDialogeCanvas.transform.GetChild(5).GetComponent<TMP_Text>().text;
-        inkDialogeCanvas.transform.GetChild(5).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
+        var currentText = inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text;
+        inkDialogeCanvas.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
         yield return new WaitForSeconds(3);
-        inkDialogeCanvas.transform.GetChild(5).GetComponent<TMP_Text>().text = currentText;
+        inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
         inkDialogeCanvas.transform.parent.gameObject.SetActive(false);
         inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(true);
     }
