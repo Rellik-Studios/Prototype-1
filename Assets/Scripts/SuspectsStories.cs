@@ -22,7 +22,7 @@ public class SuspectsStories : MonoBehaviour
     }
     public bool HasTalked()
     {
-        return talked;
+        return talkedOnce;
     }
 
     public TextAsset GetStory()

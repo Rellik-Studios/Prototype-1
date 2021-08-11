@@ -139,17 +139,23 @@ public class BasicInkExample : MonoBehaviour
 		// Display all the choices, if there are any!
 		if (story.currentChoices.Count > 0)
 		{
-			for (int i = 0; i < story.currentChoices.Count; i++)
-			{
+            yield return new WaitWhile(()=> { return m_textBox.text != m_fullText; });
+            
+            {
+                for (int i = 0; i < story.currentChoices.Count; i++)
+                {
 
-				Choice choice = story.currentChoices[i];
-				var button = m_choices.transform.GetChild(i).gameObject.GetComponent<Button>();
+                    Choice choice = story.currentChoices[i];
+                    var button = m_choices.transform.GetChild(i).gameObject.GetComponent<Button>();
 
-				CreateChoiceView(button, choice.text.Trim());
-				// Tell the button what to do when we press it
-				button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
-			}
-		}
+                    CreateChoiceView(button, choice.text.Trim());
+                    // Tell the button what to do when we press it
+                    button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
+                
+                }
+            }
+            
+        }
 		// If we've read all the content and there's no choices, the story is finished!
 		else if (!canProceed)
 		{
@@ -209,12 +215,6 @@ public class BasicInkExample : MonoBehaviour
 				gameManager.Instance.handleInteractions(interactName);
 			}
 
-			if (tag.StartsWith("Skip."))
-			{
-				Int32.TryParse(tag.Substring("Skip.".Length, tag.Length - "Skip.".Length).ToLower(), out int skipTimer);
-
-				Invoke("CanProceed", skipTimer);
-			}
 
 			if (tag.StartsWith("Function."))
 			{
