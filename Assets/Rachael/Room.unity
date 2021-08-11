@@ -278,7 +278,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   cursorDefault: {fileID: 2800000, guid: 3856cee622a1d7448822e690218e0e9c, type: 3}
-  cursorHover: {fileID: 2800000, guid: 3856cee622a1d7448822e690218e0e9c, type: 3}
+  cursorHover: {fileID: 2800000, guid: 30db290678f34114bae3c11b277ac778, type: 3}
   text: 
 --- !u!114 &120317769 stripped
 MonoBehaviour:
@@ -505,6 +505,7 @@ MonoBehaviour:
   story: {fileID: 4900000, guid: 99f66833da350544dbc66c2e07b7faf0, type: 3}
   storyTalked: {fileID: 4900000, guid: 59d6ea14a4c40bc4ba8b64a4e7d9de32, type: 3}
   talked: 0
+  talkedOnce: 0
 --- !u!65 &143531867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3832,6 +3833,7 @@ MonoBehaviour:
   story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
   storyTalked: {fileID: 4900000, guid: 21cdaf7f460e276448455aa904b4f196, type: 3}
   talked: 0
+  talkedOnce: 0
 --- !u!1 &534960220
 GameObject:
   m_ObjectHideFlags: 0
@@ -8884,13 +8886,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2001086350}
-        m_TargetAssemblyTypeName: SolveTheCase, Assembly-CSharp
-        m_MethodName: IsCorect
-        m_Mode: 1
+      - m_Target: {fileID: 99772419}
+        m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 4900000, guid: 5a5fa8c145b2084479a70a0ca65f8f3c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11747,6 +11749,7 @@ MonoBehaviour:
   story: {fileID: 4900000, guid: 6d085d5d4105fc64f968dcde46769f25, type: 3}
   storyTalked: {fileID: 4900000, guid: 1d4294948f02c544881de3104179c714, type: 3}
   talked: 0
+  talkedOnce: 0
 --- !u!65 &2112910979
 BoxCollider:
   m_ObjectHideFlags: 0

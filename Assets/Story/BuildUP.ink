@@ -103,6 +103,7 @@ What really killed him was...
  Oh yeah? So you don't mind if we search your apartment for a certain "item" right? #Character.Protagonist
  
  Grr... Foiled by a rookie. #Emotion.Sen_angry #Character.Sen
+ I solved the case! #Character.Protagonist #Interaction.Win
 ->DONE
     
 -> END
