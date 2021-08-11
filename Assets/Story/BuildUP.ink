@@ -2,7 +2,7 @@
 
 === Question_1 ===
 
-We know one important thing about the killer... #Character. 
+We know one important thing about the killer... #Character.Protagnist #Emotion.null
     + [They are a male] #Character.Player #Skip.2
         We know the suspect is male from the Son's statement. #Character.Protagnist
         His dad mentioned a "him". #Character.Protagnist
@@ -81,7 +81,7 @@ What really killed him was...
     ->Question_7
     +[Wine tipped] #Skip.2
         We found traces of poison when we sampled the tipped glass! #Character.Protagnist
-        So? This doesn't change anything, the man is clearly guilty!
+        So? This doesn't change anything, the man is clearly guilty! #Character.Sen #Emotion.sen_snarky
     -->Finale
 ->DONE
  
@@ -102,7 +102,7 @@ What really killed him was...
  
  Oh yeah? So you don't mind if we search your apartment for a certain "item" right? #Character.Protagonist
  
- Grr... Foiled by a rookie. #Emotion.Sen_angry #Character.Sen
+ Grr... Foiled by a rookie. #Emotion.sen_angry #Character.Sen
  I solved the case! #Character.Protagonist #Interaction.Win
 ->DONE
     
