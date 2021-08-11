@@ -12,5 +12,7 @@
                         The victim was stabbed with a knife. The knife was plunged straight into the heart. #Character.Sen #Emotion.sen_snarky
                         I am certain that is the cause of death. #Character.Sen #Emotion.sen_snarky 
                         I see. #Character.Protagnist #Interaction.addToInventory(seniordetectiveautopsy)
-                        ->END            
+                        ->Question_1
+    *->
+    I have no further questions #Character.Sen
 -> DONE

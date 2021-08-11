@@ -15,6 +15,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] private BasicInkExample ink;
 
     [SerializeField] private TextAsset story;
+
     public void StartStory(TextAsset _story)
     {
         ink.m_inkJsonAsset = _story; 
@@ -128,6 +129,11 @@ public class gameManager : MonoBehaviour
             //Add hurt here
             Health--;
             Debug.Log("Hurt");
+            return;
+        }
+        if(interactName =="Win")
+        {
+            GetComponent<MainMenu>().WinButton();
             return;
         }
 
