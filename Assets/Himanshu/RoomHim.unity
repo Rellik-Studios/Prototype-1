@@ -1466,7 +1466,7 @@ MeshCollider:
   m_GameObject: {fileID: 388611993}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -4478,6 +4478,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
       propertyPath: m_Name
       value: Autopsy
@@ -6384,7 +6388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340013d60a9b9404395daa24da9d6450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 4900000, guid: 99f66833da350544dbc66c2e07b7faf0, type: 3}
+  story: {fileID: 4900000, guid: 6d085d5d4105fc64f968dcde46769f25, type: 3}
   storyTalked: {fileID: 4900000, guid: 59d6ea14a4c40bc4ba8b64a4e7d9de32, type: 3}
   talked: 0
   talkedOnce: 0

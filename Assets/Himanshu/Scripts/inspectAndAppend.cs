@@ -36,7 +36,11 @@ public class inspectAndAppend : MonoBehaviour
     private IEnumerator OnMouseDown()
     {
         append?.Invoke();
-        
+
+        if (ink == null)
+        {
+            ink = GameObject.FindGameObjectWithTag("CanvasInspect");
+        }
         ink.transform.GetChild(0).gameObject.SetActive(true);
         FindObjectOfType<InventorySystem>().ItemInspected();
         yield return new WaitForEndOfFrame();
