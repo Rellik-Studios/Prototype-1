@@ -14,5 +14,5 @@
                         I see. #Character.Protagnist #Interaction.addToInventory(seniordetectiveautopsy)
                         ->Question_1
     *->
-    I have no further questions #Character.Sen
+    I have no further questions #Character.Sen #Interaction.talked(true)
 -> DONE
