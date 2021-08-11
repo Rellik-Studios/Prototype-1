@@ -171,7 +171,10 @@ public class gameManager : MonoBehaviour
             {
                 if (Int32.TryParse(append, out int intAppend))
                 {
-                    itEvidence.Value.pointer = intAppend - 1;
+                    if (itEvidence.Value.pointer < intAppend - 1)
+                    {
+                        itEvidence.Value.pointer = intAppend - 1;
+                    }
                 }
             }
         }
