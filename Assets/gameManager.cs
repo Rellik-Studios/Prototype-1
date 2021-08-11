@@ -66,7 +66,7 @@ public class gameManager : MonoBehaviour
         collectedEvidences = new Dictionary<string, EvidenceInfo>();
 
     }
-    public int Health = 3;
+    public int Health = 6;
     public Dictionary<string, EvidenceInfo> collectedEvidences;
     public EvidenceInfo selectedEvidence { get; set; }
 
@@ -108,7 +108,7 @@ public class gameManager : MonoBehaviour
         if (interactName == "Hurt")
         {
             //Add hurt here
-            Health--;
+            Health -=2;
             Debug.Log("Hurt");
             return;
         }
