@@ -49,6 +49,9 @@ public class inspectAndAppend : MonoBehaviour
         yield return new WaitForSeconds(3);
         ink.transform.GetChild(2).GetComponent<TMP_Text>().text = currentText;
         ink.transform.GetChild(0).gameObject.SetActive(false);
+        //my solution down below
+        //Destroy(gameObject.GetComponent<BoxCollider>());
+
         //if (append is { }) Destroy(this.gameObject);
     }
 }
