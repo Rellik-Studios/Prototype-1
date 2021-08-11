@@ -29,6 +29,7 @@ public class SolveTheCase : MonoBehaviour
             {
                 Hearts[i].SetActive(true);
             }
+
             else
             {
                 Hearts[i].SetActive(false);

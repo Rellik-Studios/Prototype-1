@@ -69,7 +69,7 @@ public class gameManager : MonoBehaviour
         collectedEvidences = new Dictionary<string, EvidenceInfo>();
 
     }
-    public int Health = 3;
+    public int Health = 6;
     public Dictionary<string, EvidenceInfo> collectedEvidences;
     private GameObject inkDialogeCanvas;
     public EvidenceInfo selectedEvidence { get; set; }
@@ -129,7 +129,7 @@ public class gameManager : MonoBehaviour
         if (interactName == "Hurt")
         {
             //Add hurt here
-            Health--;
+            Health -=2;
             Debug.Log("Hurt");
             return;
         }
@@ -192,10 +192,10 @@ public class gameManager : MonoBehaviour
                 //ink.transform.parent.gameObject.SetActive(true);
                 ink.SetActive(true);
                 
-                var currentText = ink.transform.GetChild(5).GetComponent<TMP_Text>().text;
-                ink.transform.GetChild(5).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
+                var currentText = ink.transform.GetChild(3).GetComponent<TMP_Text>().text;
+                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = "<color=red>Huh? I don't Understand</color>";
                 yield return new WaitForSeconds(3);
-                ink.transform.GetChild(5).GetComponent<TMP_Text>().text = currentText;
+                ink.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
                 ink.gameObject.SetActive(false);
                 selectedEvidence = null;
             }

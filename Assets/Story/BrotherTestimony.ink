@@ -30,6 +30,7 @@ rippedphoto2 #Function.setrippedphoto
         What about you, do you have one? #Character.Protagnist
         ...You should be getting on with your investigation, Detective. #Character.Brother #Emotion.brother.sad
         Hm... #Character.Protagnist
+        #Interaction.modify(knife3)
         {done ==1:
     #Interaction.talked(true)
   - else:
@@ -42,6 +43,7 @@ rippedphoto2 #Function.setrippedphoto
         #Character.Brother #Emotion.brother_neutral
         I don't know much about him. That box looks familiar though. 
         #Character.Brother #Emotion.brother_neutral
+        #Interaction.modify(rippedPhoto3)
         {done ==1:
     #Interaction.talked(true)
   - else:

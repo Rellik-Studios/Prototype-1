@@ -38,7 +38,8 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
      
     ->Stuff
     *{rippedPhoto} {flag} [Show Ripped Photo]
-    Yes that is the Duke as a child, and he's holding the box that's missing...#Emotion.maid_neutral #Character.Maid #Interaction.show(rippedPhoto) #Interaction.modify(missingitem3)
+    Yes that is the Duke as a child, and he's holding the box that's missing...#Emotion.maid_neutral #Character.Maid #Interaction.show(rippedPhoto) 
+    #Interaction.modify(missingitem3)
  {done ==1:
     #Interaction.talked(true)
   - else:
@@ -53,7 +54,6 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
 
 === function setrippedphoto(value)
 ~ rippedPhoto = value
-
 
 === function setflag(value)
 ~flag = value
