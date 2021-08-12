@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: aa6b12edc19f3554ca344c3183134892
+guid: f6d62a33b1cdfc7428a323acf212bc87
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SM_Dresser1_SM_DresserMat
+    second: {fileID: 2100000, guid: 9602659c9b99d6143a1abc7d41992cd9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
