@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -244,6 +244,7 @@ MonoBehaviour:
   sceneController: {fileID: 2009679603}
   ink: {fileID: 1908123725}
   story: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
+  Health: 3
 --- !u!114 &99772420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +264,7 @@ MonoBehaviour:
   Inventory: {fileID: 1114196441}
   ShowUI: {fileID: 179378378}
   Dialogue: {fileID: 2009679603}
+  talkingTo: {fileID: 0}
 --- !u!4 &99772421
 Transform:
   m_ObjectHideFlags: 0
@@ -1464,7 +1466,7 @@ MeshCollider:
   m_GameObject: {fileID: 388611993}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -3390,6 +3392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 4900000, guid: 08773aaeb2577fd408a0807630e5d40b, type: 3}
+  storyTalked: {fileID: 4900000, guid: 21cdaf7f460e276448455aa904b4f196, type: 3}
+  talked: 0
+  talkedOnce: 0
 --- !u!1 &534960220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,7 +3894,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118806
+  m_Name: pb_Mesh38192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4336,7 +4341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Name
-      value: Standing Wine Glass
+      value: Tipped Wine Glass
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
       propertyPath: m_Layer
@@ -4471,6 +4476,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
@@ -5995,7 +6004,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118784
+  m_Name: pb_Mesh38170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6348,6 +6357,119 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 72911065360980774, guid: baa4b91db3662a44f9927cdc89f649d4, type: 3}
+--- !u!1 &1337836875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337836879}
+  - component: {fileID: 1337836878}
+  - component: {fileID: 1337836877}
+  - component: {fileID: 1337836876}
+  m_Layer: 7
+  m_Name: Brother
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1337836876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337836875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340013d60a9b9404395daa24da9d6450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  story: {fileID: 4900000, guid: 6d085d5d4105fc64f968dcde46769f25, type: 3}
+  storyTalked: {fileID: 4900000, guid: 59d6ea14a4c40bc4ba8b64a4e7d9de32, type: 3}
+  talked: 0
+  talkedOnce: 0
+--- !u!65 &1337836877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337836875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.45, y: 15.81, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!212 &1337836878
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337836875}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5a61abf290b8b6d4db78c68f0d91cb08, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.45, y: 15.81}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1337836879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337836875}
+  m_LocalRotation: {x: -0, y: -0.40181687, z: -0, w: 0.9157201}
+  m_LocalPosition: {x: -5.25, y: 2.75, z: -4.63}
+  m_LocalScale: {x: 0.19388169, y: 0.19388169, z: 0.19388169}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: -47.384, z: 0}
 --- !u!1 &1343612081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8785794435765274627, guid: dbcbade7c62e3514dbfa6276d802e8bb, type: 3}
@@ -6513,7 +6635,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   append:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1781445651}
+        m_TargetAssemblyTypeName: EvidenceInfo, Assembly-CSharp
+        m_MethodName: ModifyAppend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   cursorDefault: {fileID: 2800000, guid: 57b54dc6b4b89fd4d9d9a2fe2a901ad6, type: 3}
   cursorHover: {fileID: 2800000, guid: 04c73266bc004a641842e950291118e7, type: 3}
   text: 
@@ -6547,12 +6681,60 @@ PrefabInstance:
       value: There is a W on this knife
       objectReference: {fileID: 0}
     - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1343612083}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 328936421}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ItemInspected
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: InventorySystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 447901902, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: text
+      value: There are fingerprints on this glass.
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1446993520, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_IsActive

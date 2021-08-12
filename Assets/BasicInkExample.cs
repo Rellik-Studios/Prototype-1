@@ -133,23 +133,29 @@ public class BasicInkExample : MonoBehaviour
 
 			// Display the text on screen!
 			CreateContentView(text);
-			canProceed = false;
+			//canProceed = false;
 		}
 
 		// Display all the choices, if there are any!
 		if (story.currentChoices.Count > 0)
 		{
-			for (int i = 0; i < story.currentChoices.Count; i++)
-			{
+            yield return new WaitWhile(()=> { return m_textBox.text != m_fullText; });
+            
+            {
+                for (int i = 0; i < story.currentChoices.Count; i++)
+                {
 
-				Choice choice = story.currentChoices[i];
-				var button = m_choices.transform.GetChild(i).gameObject.GetComponent<Button>();
+                    Choice choice = story.currentChoices[i];
+                    var button = m_choices.transform.GetChild(i).gameObject.GetComponent<Button>();
 
-				CreateChoiceView(button, choice.text.Trim());
-				// Tell the button what to do when we press it
-				button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
-			}
-		}
+                    CreateChoiceView(button, choice.text.Trim());
+                    // Tell the button what to do when we press it
+                    button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
+                
+                }
+            }
+            
+        }
 		// If we've read all the content and there's no choices, the story is finished!
 		else if (!canProceed)
 		{
@@ -170,7 +176,7 @@ public class BasicInkExample : MonoBehaviour
 	// Creates a textbox showing the the line of text
 	void CreateContentView(string text)
 	{
-
+		var skip = false;
 		foreach (var tag in story.currentTags)
 		{
 			if (tag.StartsWith("Character."))
@@ -209,11 +215,12 @@ public class BasicInkExample : MonoBehaviour
 				gameManager.Instance.handleInteractions(interactName);
 			}
 
-			if (tag.StartsWith("Skip."))
-			{
-				Int32.TryParse(tag.Substring("Skip.".Length, tag.Length - "Skip.".Length).ToLower(), out int skipTimer);
 
-				Invoke("CanProceed", skipTimer);
+			if (tag.StartsWith("Function."))
+			{
+				var functionName = tag.Substring("Function.".Length, tag.Length - "Function.".Length);
+				story.EvaluateFunction(functionName, gameManager.Instance.isOnAppend(text.Substring(0, text.Length - 1), text.Substring(text.Length - 1)));
+				skip = true;
 			}
 
 
@@ -223,11 +230,21 @@ public class BasicInkExample : MonoBehaviour
 		{
 			text = text.Substring(0, (text.LastIndexOf('.')));
 		}
-		StopCoroutine(TypeSentence(""));
-		StartCoroutine(TypeSentence(text));
-		Text storyText = Instantiate(m_textPrefab) as Text;
+
+		if (!skip)
+		{
+			StopCoroutine(TypeSentence(""));
+			StartCoroutine(TypeSentence(text));
+			canProceed = false;
+		}
+		else
+		{
+			canProceed = true;
+		}
+		
+		//Text storyText = Instantiate(m_textPrefab) as Text;
 		//storyText.text = text;
-		storyText.transform.SetParent(m_canvas.transform, true);
+		//storyText.transform.SetParent(m_canvas.transform, true);
 
 
 		m_isPlaying = true;
@@ -329,7 +346,7 @@ void IsPlayingFalse()
 
 	private void Update()
 	{
-		if (!m_audioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
+		if (!m_audioSource.isPlaying && Input.GetMouseButtonDown(0) && GameObject.FindGameObjectWithTag("InkDialogue").activeSelf)
 		{
 			if (m_textBox.text == m_fullText) canProceed = true;
 		}

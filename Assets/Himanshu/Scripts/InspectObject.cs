@@ -15,6 +15,8 @@ public class InspectObject : MonoBehaviour
     float xRotation = 0f;
 
     float yRotation = 0f;
+    public Vector2 xRotationLimit = new Vector2(-180f,180f);
+    public Vector2 yRotationLimit = new Vector2(-180f,180f);
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,22 @@ public class InspectObject : MonoBehaviour
             {
                 child.gameObject.SetActive(true);
                 inspecting = child.gameObject;
+                if (objectToInspect.ToLower().Replace(" ", "") == "deadbody")
+                {
+                    xRotationLimit = new Vector2(-40f, 0f);
+                    yRotationLimit = new Vector2(-20f, 20f);
+                }
+                
+                else if (objectToInspect.ToLower().Replace(" ", "") == "rippedphoto")
+                {
+                    xRotationLimit = new Vector2(-180f, 0f);
+                    yRotationLimit = new Vector2(-90f, 90f);
+                }
+                else
+                {
+                    xRotationLimit = new Vector2(-180f, 180f);
+                    yRotationLimit = new Vector2(-180f, 180f);
+                }
             }
         }
     }
@@ -61,12 +79,21 @@ public class InspectObject : MonoBehaviour
         }
         if (Input.GetMouseButton(1))
         {
+            
             Cursor.lockState = CursorLockMode.Locked;
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
+            
+            
             xRotation -= mouseY;
             yRotation += mouseX;
+           
+            xRotation = Mathf.Clamp(xRotation, xRotationLimit.x, xRotationLimit.y);   
+            
+             yRotation = Mathf.Clamp(yRotation, yRotationLimit.x, yRotationLimit.y);   
+            
+            Debug.Log(yRotation);
+            
             inspecting.transform.localRotation = (Quaternion.Euler(xRotation, yRotation, 0f));
         }
         else

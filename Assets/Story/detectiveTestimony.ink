@@ -6,11 +6,13 @@
                 ->Question_1
     *[Night of the murder] Could you tell me what happened at the night of the murder? #Character.Protagnist
                             I know there was a party being held at this residence. #Character.Sen #Emotion.sen_neutral
-                            Take a look at this article. #Character.Sen #Emotion.sen_neutral #Interaction.addToInventory(article)
+                            Take a look at this article. #Character.Sen #Emotion.sen_neutral #Interaction.addToInventory(Newspaperarticle)
                             ->Question_1
     *[Cause of Death]   Can you tell me the victim's cause of death? #Character.Protagnist
                         The victim was stabbed with a knife. The knife was plunged straight into the heart. #Character.Sen #Emotion.sen_snarky
                         I am certain that is the cause of death. #Character.Sen #Emotion.sen_snarky 
-                        I see. #Character.Protagnist #Interaction.addToInventory(autopsy)
-                        ->END            
+                        I see. #Character.Protagnist #Interaction.addToInventory(seniordetectiveautopsy)
+                        ->Question_1
+    *->
+    I have no further questions #Character.Sen #Interaction.talked(true)
 -> DONE

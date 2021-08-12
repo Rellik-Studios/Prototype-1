@@ -16,9 +16,18 @@ public class DetectObjects : MonoBehaviour
 
     [CanBeNull] private Renderer m_revert;
     private List<Color> defaultColor;
+
+    public SuspectsStories talkingTo;
+    private CharacterController _controller;
+    
+    public Texture2D mouseDefault;
+    public Texture2D mouseHover;
+
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.SetCursor(mouseDefault, Vector2.zero, CursorMode.Auto);
+
         _camera = Camera.main;
         defaultColor = new List<Color>();
     }
@@ -49,7 +58,7 @@ public class DetectObjects : MonoBehaviour
                     }
                     else if (!gameManager.Instance.collectedEvidences.ContainsValue(evidence))
                     {
-                        if(m_revert != null)
+                        if (m_revert != null)
                             for (var index = 0; index < m_revert.materials.Length; index++)
                             {
                                 var mat = m_revert.materials[index];
@@ -57,14 +66,15 @@ public class DetectObjects : MonoBehaviour
                             }
 
                         m_revert = (hit.collider.gameObject.GetComponent<Renderer>());
-                   //     defaultColor.Capacity = m_revert.materials.Length;
-                   foreach (var mat in m_revert.materials)
-                   {
-                       if(defaultColor.Count < m_revert.materials.Length)
-                        defaultColor.Add(mat.color);
-                       mat.color = Color.red;
+                        //     defaultColor.Capacity = m_revert.materials.Length;
+                        foreach (var mat in m_revert.materials)
+                        {
+                            if (defaultColor.Count < m_revert.materials.Length)
+                                defaultColor.Add(mat.color);
+                            mat.color = Color.red;
 
-                   }
+                        }
+                        Cursor.SetCursor(mouseHover, Vector2.zero, CursorMode.Auto);
                     }
 
 
@@ -72,7 +82,10 @@ public class DetectObjects : MonoBehaviour
                 else if (hit.collider.TryGetComponent<SuspectsStories>(out SuspectsStories suspects))
                 {
                     if (Input.GetMouseButtonDown(0))
+                    {
                         gameManager.Instance.StartStory(suspects.GetStory());
+                        talkingTo = suspects;
+                    }
                 }
                 else
                 {
@@ -83,6 +96,8 @@ public class DetectObjects : MonoBehaviour
                             var mat = m_revert.materials[index];
                             mat.color = defaultColor[index];
                         }
+                    Cursor.SetCursor(mouseDefault, Vector2.zero, CursorMode.Auto);
+
                     //m_revert = null;
                     //defaultColor = null;
 
