@@ -15,11 +15,15 @@ public class EvidenceInfo : MonoBehaviour
     public int pointer;
     public bool Inspected = false;
 
+    public bool InspectVisible = false;
+    public bool SampleVisible = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         evidenceImage = Resources.Load<Sprite>("Images/" + gameObject.name.ToLower().Replace(" ", " "));
+
         if(evidenceImage == null)
         {
             evidenceImage = Resources.Load<Sprite>("Images/knife");
