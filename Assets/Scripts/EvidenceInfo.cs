@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+
+[SelectionBase]
 public class EvidenceInfo : MonoBehaviour
 {
     private Sprite evidenceImage;
