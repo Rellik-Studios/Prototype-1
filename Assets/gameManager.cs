@@ -21,6 +21,11 @@ public class gameManager : MonoBehaviour
     public Dictionary<string, AudioClip> soundEffects { get; private set; }
 
     public AudioSource audioSource;
+    
+    public int Health = 6;
+    public Dictionary<string, EvidenceInfo> collectedEvidences;
+    private GameObject inkDialogeCanvas;
+    public EvidenceInfo selectedEvidence { get; set; }
 
     void AddToDictionary<T>(Dictionary<string, T> _dictionary, string _path) where T : Object
     {
@@ -55,30 +60,7 @@ public class gameManager : MonoBehaviour
         {
             GetComponent<MainMenu>().LoseButton();
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            foreach (var vEvidence in collectedEvidences)
-            {
-               vEvidence.Value.Information();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            foreach (var vEvidence in collectedEvidences)
-            {
-                modifyEvidence(vEvidence.Value);
-            } 
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            StartStory(story);
-        }
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            Health--;
-        }
+        
     }
 
     private void Start()
@@ -87,18 +69,23 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
+        
         audioSource = GetComponent<AudioSource>();
         inkDialogeCanvas = GameObject.FindGameObjectWithTag("InkDialogue");
         soundEffects = new Dictionary<string, AudioClip>();
         AddToDictionary(soundEffects, "Effects");
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         collectedEvidences = new Dictionary<string, EvidenceInfo>();
 
     }
-    public int Health = 6;
-    public Dictionary<string, EvidenceInfo> collectedEvidences;
-    private GameObject inkDialogeCanvas;
-    public EvidenceInfo selectedEvidence { get; set; }
+   
 
     public int isOnAppend(string _evidenceName, string _append)
     {
@@ -170,6 +157,10 @@ public class gameManager : MonoBehaviour
             //Add hurt here
             Health -=2;
             Debug.Log("Hurt");
+            if(soundEffects.TryGetValue("hurt", out AudioClip clip))
+            {
+                audioSource.PlayOneShot(clip);
+            }
             return;
         }
         if(interactName =="Win")
@@ -187,7 +178,17 @@ public class gameManager : MonoBehaviour
 
     IEnumerator addToInventory(string obect)
     {
+        if(soundEffects.TryGetValue("evidencepickup", out AudioClip clip))
+        {
+            audioSource.PlayOneShot(clip);
+        }
         GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Image>().enabled = true;
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", true);
+
+        yield return new WaitForSeconds(1f);
+        
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", false);
+
         var evidences = GameObject.FindObjectsOfType<EvidenceInfo>();
           foreach (var evidence in evidences)
         {

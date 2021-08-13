@@ -6,9 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="f4a7d29d-406c-4a61-b435-c6be08b56028" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BasicInkExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BasicInkExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MainRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainRoom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Rachael/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Master.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Master.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Rachael/LoseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/LoseScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Rachael/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Rachael/WinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/WinScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/gameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,28 +38,30 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25e9afc147634a5ca855ab83fab425dd75d400/18/02ede4f2/ScriptableSingleton`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/BaseRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/eb/b887d0e7/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/3d/a0cd6baa/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/Raycasters/BaseRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" />
       <option value="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo/Scripts/BasicInkExample.cs" />
       <option value="$PROJECT_DIR$/Assets/Ink/InkLibs/InkRuntime/Story.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/inspectAndAppend.cs" />
       <option value="$PROJECT_DIR$/Assets/BasicInkExample.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DetectObjects.cs" />
-      <option value="$PROJECT_DIR$/Assets/gameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SuspectsStories.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" />
+      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" />
       <option value="$PROJECT_DIR$/Assets/cameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/gameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vxlZUR8AIaw3PctewWHFPbvpSg" />
@@ -58,7 +71,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.248104" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.24822307" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -87,10 +100,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20840">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="20840" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -115,8 +128,7 @@
       <workItem from="1628468877400" duration="8443000" />
       <workItem from="1628555016446" duration="1835000" />
       <workItem from="1628640424167" duration="7015000" />
-      <workItem from="1628686672600" duration="1700000" />
-      <workItem from="1628812214194" duration="15899000" />
+      <workItem from="1628686672600" duration="7373000" />
     </task>
     <servers />
   </component>
@@ -146,28 +158,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs</url>
-          <line>51</line>
+          <line>53</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\Himanshu\Scripts\InspectObject.cs" initialLine="27" containingFunctionPresentation="method 'Begin'" />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs</url>
-          <line>56</line>
+          <line>58</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\Himanshu\Scripts\InspectObject.cs" initialLine="32" containingFunctionPresentation="method 'Begin'" />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/BasicInkExample.cs</url>
-          <line>194</line>
-          <properties documentPath="D:\Users\mds00001xo\Documents\GitHub\Prototype-1\Assets\BasicInkExample.cs" initialLine="190" containingFunctionPresentation="method 'CreateContentView'">
-            <startOffsets>
-              <option value="5209" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5355" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="59" />
+          <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
+          <line>266</line>
+          <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="148" containingFunctionPresentation="method 'show'" />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
+          <line>239</line>
+          <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="137" containingFunctionPresentation="method 'modify'" />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs</url>
+          <line>127</line>
+          <properties documentPath="D:\Users\mds00001xo\Documents\GitHub\Prototype-1\Assets\Himanshu\Scripts\InspectObject.cs" initialLine="81" containingFunctionPresentation="method 'Update'" />
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

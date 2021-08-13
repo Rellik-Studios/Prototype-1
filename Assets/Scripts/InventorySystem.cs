@@ -16,6 +16,10 @@ public class InventorySystem : MonoBehaviour
     public GameObject InventoryUI;
     public GameObject showUI;
 
+    public bool isInventoryOpen
+    {
+        get => IsInvenOpen || IsShowOpen;
+    }
     //testing
     
     public GameObject SuspectScreen;

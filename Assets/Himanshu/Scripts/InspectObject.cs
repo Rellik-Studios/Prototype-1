@@ -12,6 +12,7 @@ public class InspectObject : MonoBehaviour
 
     [SerializeField] private GameObject inspecting;
 
+    public bool isInspecting = false;
     private float x;
 
     private float xRotation
@@ -45,6 +46,7 @@ public class InspectObject : MonoBehaviour
 
     public void Begin(string objectToInspect)
     {
+        isInspecting = true;
         ink.gameObject.SetActive(true);
         ink.transform.GetChild(0).gameObject.SetActive(false);
         GetComponent<Camera>().enabled = true;
@@ -77,7 +79,8 @@ public class InspectObject : MonoBehaviour
     }
 
     public void End()
-    { 
+    {
+        isInspecting = false;
         GetComponent<Camera>().enabled = false;
         GameObject.FindObjectOfType<InventorySystem>().UpdatePreview();
         transform.GetChild(0).gameObject.SetActive(false);

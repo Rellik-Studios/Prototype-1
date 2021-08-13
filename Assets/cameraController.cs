@@ -10,7 +10,8 @@ public class cameraController : MonoBehaviour
     private List<GameObject> cameras;
     private int index = 0;
     [SerializeField] private int defaultTimer;
-
+    private InspectObject inspector;
+    private InventorySystem inventorySystem;
     enum lSwitch
     {
         UP, DOWN
@@ -25,6 +26,8 @@ public class cameraController : MonoBehaviour
 
     void Awake()
     {
+        inventorySystem = GameObject.FindObjectOfType<InventorySystem>();
+        inspector = GameObject.FindObjectOfType<InspectObject>();
         inkDialogue = GameObject.FindGameObjectWithTag("InkDialogue");
         Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time = defaultTimer;
         cameras = new List<GameObject>();
@@ -49,7 +52,7 @@ public class cameraController : MonoBehaviour
                 StartCoroutine(CanSwitch(defaultTimer));
             }
 
-            if (Input.GetKeyDown(KeyCode.Q) && !inkDialogue.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.Q) && !inkDialogue.activeInHierarchy && !inspector.isInspecting && !inventorySystem.isInventoryOpen)
             {
                 lastSwitch = lSwitch.DOWN;
                 cameras[cameraIndex].SetActive(false);
@@ -60,7 +63,7 @@ public class cameraController : MonoBehaviour
                
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && !inkDialogue.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.E) && !inkDialogue.activeInHierarchy && !inspector.isInspecting && !inventorySystem.isInventoryOpen)
             {
                 cameras[cameraIndex].SetActive(false);
                 lastSwitch = lSwitch.UP;

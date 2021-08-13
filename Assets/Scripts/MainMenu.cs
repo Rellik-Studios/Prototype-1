@@ -7,8 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
-    {
-        
+    { 
     }
 
     // Update is called once per frame
@@ -16,6 +15,8 @@ public class MainMenu : MonoBehaviour
     {
         //used for testing purpose
         //remove when testing is done
+        
+#if UNITY_EDITOR
         if(Input.GetKeyDown(KeyCode.W))
         {
             WinButton();
@@ -24,6 +25,7 @@ public class MainMenu : MonoBehaviour
         {
             LoseButton();
         }
+#endif
     }
     public void PlayButton()
     {

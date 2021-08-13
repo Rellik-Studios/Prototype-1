@@ -53,7 +53,7 @@ public class EvidenceInfo : MonoBehaviour
         }
         else
         {
-            if(gameManager.Instance.soundEffects.TryGetValue("buttonsound", out AudioClip clip))
+            if(gameManager.Instance.soundEffects.TryGetValue("button", out AudioClip clip))
             {
                 gameManager.Instance.audioSource.PlayOneShot(clip);
             }
