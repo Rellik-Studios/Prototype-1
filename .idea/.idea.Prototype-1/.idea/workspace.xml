@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f4a7d29d-406c-4a61-b435-c6be08b56028" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BasicInkExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BasicInkExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainRoom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cameras.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cameras.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Rachael/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Master.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Master.mixer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/gameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,7 @@
       <workItem from="1628555016446" duration="1835000" />
       <workItem from="1628640424167" duration="7015000" />
       <workItem from="1628686672600" duration="1700000" />
-      <workItem from="1628812214194" duration="4898000" />
+      <workItem from="1628812214194" duration="10018000" />
     </task>
     <servers />
   </component>
@@ -162,13 +161,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
-          <line>221</line>
+          <line>226</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="148" containingFunctionPresentation="method 'show'" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
-          <line>194</line>
+          <line>199</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="137" containingFunctionPresentation="method 'modify'" />
           <option name="timeStamp" value="53" />
         </line-breakpoint>

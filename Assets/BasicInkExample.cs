@@ -274,7 +274,7 @@ public class BasicInkExample : MonoBehaviour
 				isTag = false;
 
 			if (!isTag)
-				yield return null;
+				yield return new WaitForSeconds(0.0167f);
 		}
 
 		yield return new WaitForSeconds(3f);

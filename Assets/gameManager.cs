@@ -93,6 +93,8 @@ public class gameManager : MonoBehaviour
     {
         if (!collectedEvidences.ContainsKey(_evidence.evidenceName.ToLower().Replace(" ", "")))
         {
+            GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Image>().enabled = true;
+            GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", true);
             collectedEvidences.Add(_evidence.evidenceName.ToLower().Replace(" ", ""), _evidence);
             inkDialogeCanvas.transform.parent.gameObject.SetActive(true);
             inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(false);
@@ -106,7 +108,9 @@ public class gameManager : MonoBehaviour
         var currentText = inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text;
         inkDialogeCanvas.transform.GetChild(0).GetComponent<Image>().enabled = false;
         inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", false);
+        yield return new WaitForSeconds(2);
         inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
         inkDialogeCanvas.transform.parent.gameObject.SetActive(false);
         inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(true);
@@ -148,6 +152,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator addToInventory(string obect)
     {
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Image>().enabled = true;
         var evidences = GameObject.FindObjectsOfType<EvidenceInfo>();
           foreach (var evidence in evidences)
         {
