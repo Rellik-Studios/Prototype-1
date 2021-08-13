@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &1646820957
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149192545965}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7759331768739107841, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
 --- !u!1 &181724572
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,13 +308,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284995539}
-  m_LocalRotation: {x: -0.38327274, y: -0.095384784, z: 0.039729368, w: -0.9178373}
-  m_LocalPosition: {x: -0, y: 15.2, z: 0}
+  m_LocalRotation: {x: -0.4732824, y: -0.0073211836, z: -0.029539768, w: -0.880385}
+  m_LocalPosition: {x: -0.57, y: 15.19, z: -0.03}
   m_LocalScale: {x: 2.3109372, y: 0.7275579, z: 2.385025}
   m_Children: []
   m_Father: {fileID: 543450652727774732}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45.328, y: 11.873, z: 0.015}
+  m_LocalEulerAnglesHint: {x: 56.399, y: 4.233, z: 6.114}
 --- !u!65 &284995542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -340,8 +326,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9999999, y: 1.3970451, z: 1}
+  m_Center: {x: -0.0000000029790772, y: 0.19852275, z: 0.0000000044571675}
 --- !u!114 &284995541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,63 +721,6 @@ MonoBehaviour:
   cursorDefault: {fileID: 2800000, guid: 3856cee622a1d7448822e690218e0e9c, type: 3}
   cursorHover: {fileID: 2800000, guid: 30db290678f34114bae3c11b277ac778, type: 3}
   text: These pills are for Cancer treatment
---- !u!64 &915298932
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149061997750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1116444134294172880, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
---- !u!65 &1582204378
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148989275424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.362915, y: 2.380188, z: 1.362915}
-  m_Center: {x: -0.0000038146973, y: 1.190094, z: -0.0000038146973}
---- !u!114 &1582204379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148989275424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bdc368510bd8cd459ec4ab9027fa6c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  append:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EvidenceInfo, Assembly-CSharp
-        m_MethodName: ModifyAppend
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  cursorDefault: {fileID: 2800000, guid: 3856cee622a1d7448822e690218e0e9c, type: 3}
-  cursorHover: {fileID: 2800000, guid: 30db290678f34114bae3c11b277ac778, type: 3}
-  text: This is a wine glass, No fingerprits are present
 --- !u!1 &1271122063
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1327273735
 Transform:
   m_ObjectHideFlags: 0
@@ -1218,6 +1147,77 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6099800089077584851, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
+--- !u!65 &1582204378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148989275424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.362915, y: 2.380188, z: 1.362915}
+  m_Center: {x: -0.0000038146973, y: 1.190094, z: -0.0000038146973}
+--- !u!114 &1582204379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148989275424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdc368510bd8cd459ec4ab9027fa6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  append:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EvidenceInfo, Assembly-CSharp
+        m_MethodName: ModifyAppend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cursorDefault: {fileID: 2800000, guid: 3856cee622a1d7448822e690218e0e9c, type: 3}
+  cursorHover: {fileID: 2800000, guid: 30db290678f34114bae3c11b277ac778, type: 3}
+  text: This is a wine glass, No fingerprits are present
+--- !u!64 &915298932
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149061997750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1116444134294172880, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
+--- !u!64 &1646820957
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149192545965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7759331768739107841, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
 --- !u!65 &2044837586817569530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1591,14 +1591,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
---- !u!4 &543450653669919767 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
-  m_PrefabInstance: {fileID: 38693884}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &919132149192545965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
+  m_PrefabInstance: {fileID: 38693884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &543450653669919767 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
   m_PrefabInstance: {fileID: 38693884}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &980838887
@@ -1678,14 +1678,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
---- !u!4 &543450652727774732 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
-  m_PrefabInstance: {fileID: 980838887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &919132149061997750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
+  m_PrefabInstance: {fileID: 980838887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &543450652727774732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f8afa0e91fa43b45b34387b173a03ec, type: 3}
   m_PrefabInstance: {fileID: 980838887}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1042845809
@@ -1765,14 +1765,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
---- !u!1 &919132148989275424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
-  m_PrefabInstance: {fileID: 1042845809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450652657186714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
+  m_PrefabInstance: {fileID: 1042845809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &919132148989275424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
   m_PrefabInstance: {fileID: 1042845809}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1573545838
@@ -1979,14 +1979,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
---- !u!1 &709947646575070641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
-  m_PrefabInstance: {fileID: 2082908386}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450651617382153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
+  m_PrefabInstance: {fileID: 2082908386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &709947646575070641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
   m_PrefabInstance: {fileID: 2082908386}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2533524704274746957
@@ -2136,14 +2136,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
---- !u!4 &2996325904405441669 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
-  m_PrefabInstance: {fileID: 3323568519338937198}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2512663501950121535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
+  m_PrefabInstance: {fileID: 3323568519338937198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2996325904405441669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
   m_PrefabInstance: {fileID: 3323568519338937198}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3400018145200430982
