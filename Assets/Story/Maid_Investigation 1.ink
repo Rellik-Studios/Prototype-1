@@ -6,8 +6,7 @@ VAR done = 0
 
 missingitem1 #Function.setmissingitem 
 rippedphoto2 #Function.setrippedphoto 
--I'm the head maid of the Duke's mansion. #Emotion.maid_neutral #Character.Maid
-If you need anything let me know. #Emotion.maid_neutral #Character.Maid
+-If you need anything let me know. #Emotion.maid_neutral #Character.Maid
 And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
     *  -> 
     I have nothing more to say #Emotion.maid_neutral #Character.Maid
@@ -27,7 +26,7 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
      
      I recall it was a pretty little box with <color=red><b>golden details</b></color>. 
      You didn't snatch it did you? I'd be honest if I were you. #Emotion.maid_irritated #Character.Maid
-     No ma'am. #Character.Protagonist
+     No ma'am. #Character.Rook
      blah
     ->DONE
     *{rippedPhoto} [Show Ripped Photo]

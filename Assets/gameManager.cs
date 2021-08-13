@@ -26,7 +26,7 @@ public class gameManager : MonoBehaviour
     
     private void Update()
     {
-        if( Health ==0)
+        if( Health <=0)
         {
             GetComponent<MainMenu>().LoseButton();
         }
@@ -105,7 +105,7 @@ public class gameManager : MonoBehaviour
     {
         var currentText = inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text;
         inkDialogeCanvas.transform.GetChild(0).GetComponent<Image>().enabled = false;
-        inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
+        inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " clue has been added to the inventory";
         yield return new WaitForSeconds(3);
         inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
         inkDialogeCanvas.transform.parent.gameObject.SetActive(false);
