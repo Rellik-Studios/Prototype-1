@@ -8588,6 +8588,10 @@ PrefabInstance:
       value: There is fingerprints
       objectReference: {fileID: 0}
     - target: {fileID: 205695604, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: 3497c545aabf3454dbe2f46068244507, type: 3}
+    - target: {fileID: 205695604, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1940390471}
@@ -8595,6 +8599,10 @@ PrefabInstance:
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ModifyAppend
       objectReference: {fileID: 0}
+    - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: 3497c545aabf3454dbe2f46068244507, type: 3}
     - target: {fileID: 215909989, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8604,6 +8612,10 @@ PrefabInstance:
       value: ModifyAppend
       objectReference: {fileID: 0}
     - target: {fileID: 284995541, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: 3497c545aabf3454dbe2f46068244507, type: 3}
+    - target: {fileID: 284995541, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 301749539}
@@ -8611,10 +8623,18 @@ PrefabInstance:
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ModifyAppend
       objectReference: {fileID: 0}
+    - target: {fileID: 428626189, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: text
       value: These pills are for cancer treatment
       objectReference: {fileID: 0}
+    - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: 3497c545aabf3454dbe2f46068244507, type: 3}
     - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8627,6 +8647,10 @@ PrefabInstance:
       propertyPath: text
       value: Photo ripped in half, a box can be seen wit golden patterns
       objectReference: {fileID: 0}
+    - target: {fileID: 1271122065, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: 3497c545aabf3454dbe2f46068244507, type: 3}
     - target: {fileID: 1271122065, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8648,6 +8672,10 @@ PrefabInstance:
       value: No fingerprints are present
       objectReference: {fileID: 0}
     - target: {fileID: 1582204379, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: 3497c545aabf3454dbe2f46068244507, type: 3}
+    - target: {fileID: 1582204379, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1133583549}
@@ -8655,6 +8683,22 @@ PrefabInstance:
       propertyPath: append.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ModifyAppend
       objectReference: {fileID: 0}
+    - target: {fileID: 1711813854505794538, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711813854505794538, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d1fa6cb1bf72d408618bcac716c310, type: 2}
+    - target: {fileID: 1711813854505794538, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711813856068242677, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 250c715b29c3cb749bb4de9b6cad0d78, type: 2}
     - target: {fileID: 5527483048050867665, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_RootOrder
       value: 11
