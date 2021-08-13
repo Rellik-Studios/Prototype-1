@@ -137,6 +137,7 @@ public class gameManager : MonoBehaviour
     {
         var currentText = inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text;
         inkDialogeCanvas.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        inkDialogeCanvas.transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<TMP_Text>().text = "Rook";
         inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
         yield return new WaitForSeconds(1);
         GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", false);
