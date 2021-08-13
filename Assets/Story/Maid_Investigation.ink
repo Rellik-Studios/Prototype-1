@@ -34,7 +34,7 @@ And please, don't touch anything. #Emotion.maid_irritated #Character.Maid
 
      I recall it was a pretty little box with <color=red><b>golden details</b></color>. 
      You didn't snatch it did you? I'd be honest if I were you. #Emotion.maid_irritated #Character.Maid
-     No ma'am. #Character.Protagonist
+     No ma'am. #Character.Rook
      
     ->Stuff
     *{rippedPhoto} {flag} [Show Ripped Photo]
