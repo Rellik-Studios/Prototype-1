@@ -5039,6 +5039,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 2200005416652236167, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2200005416779422407, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -9817,6 +9821,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec90e4a4376c4074da2facb992332997, type: 3}
+--- !u!1001 &1712728138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.796
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662193152972317749, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150464978487885455, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+      propertyPath: m_Name
+      value: SM_Pill_Bottle 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
 --- !u!1 &1735132392
 GameObject:
   m_ObjectHideFlags: 0
@@ -12926,6 +12999,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec90e4a4376c4074da2facb992332997, type: 3}
+--- !u!1 &2093490268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4150464978487885455, guid: 13ca1cc8887b7464d9d5085d8e94142d, type: 3}
+  m_PrefabInstance: {fileID: 1712728138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2093490269
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093490268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5511996699474248536, guid: 20e2680133c0da8429faa641168f1d3c, type: 3}
+--- !u!114 &2093490270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093490268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd27682cd1367544a7e945a03f0c309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evidenceName: Pills
+  descriptions:
+  - "A bottle of pills, for the treatment of chronic illness. It says \u2018Take
+    once a day\u2019\r\n\n"
+  - "A bottle of pills, for the treatment of chronic illness. It says \u2018Take
+    once a day\u2019\r.The Duke was suffering from a chronic illness and had a few
+    years left to live.\n\n"
+  pointer: 0
+  Inspected: 0
+  InspectVisible: 1
+  SampleVisible: 0
 --- !u!850595691 &2104562753
 LightingSettings:
   m_ObjectHideFlags: 0

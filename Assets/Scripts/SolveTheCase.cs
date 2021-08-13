@@ -51,6 +51,7 @@ public class SolveTheCase : MonoBehaviour
     {
         return gameManager.Instance.collectedEvidences[name];
     }
+    
     public bool RequiredEvid()
     {
         return gameManager.Instance.collectedEvidences["seniordetectiveautopsy"].pointer == 0 &&
