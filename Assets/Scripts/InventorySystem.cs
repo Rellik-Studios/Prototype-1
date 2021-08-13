@@ -47,30 +47,30 @@ public class InventorySystem : MonoBehaviour
     {
         
         //for testing purposes on whether the inventory menu is opened
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            inventory.enabled = true;
-            IsInvenOpen = !IsInvenOpen;
-            InventoryUI.SetActive(IsInvenOpen);
-            Preview.SetActive(false);
-            current_index = -1;
-
-            //update name
-            nameText.text = "";
-
-            //update description
-            nameDescript.text = "";
-
-            //update image
-            previewImage.sprite = null;
-
-            UpdateInventory();
-        }
-        //this function will update the Inventory items in there
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            UpdateInventory();
-        }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     inventory.enabled = true;
+        //     IsInvenOpen = !IsInvenOpen;
+        //     InventoryUI.SetActive(IsInvenOpen);
+        //     Preview.SetActive(false);
+        //     current_index = -1;
+        //
+        //     //update name
+        //     nameText.text = "";
+        //
+        //     //update description
+        //     nameDescript.text = "";
+        //
+        //     //update image
+        //     previewImage.sprite = null;
+        //
+        //     UpdateInventory();
+        // }
+        // //this function will update the Inventory items in there
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     UpdateInventory();
+        // }
     }
     //function used for the buttons in inventory 
     public void SelectEvidence(int index)
