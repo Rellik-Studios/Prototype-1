@@ -12,9 +12,23 @@ public class InspectObject : MonoBehaviour
 
     [SerializeField] private GameObject inspecting;
 
-    float xRotation = 0f;
+    private float x;
 
-    float yRotation = 0f;
+    private float xRotation
+    {
+        get => x;
+        set => x = value < -180 ? value = 180 + 180 + value : value > 180 ? -180 - 180 + value : value;
+    }
+    
+    
+
+    private float y;
+
+    float yRotation
+    {
+        get => y;
+        set => y = value < -180 ? value = 180 + 180 + value : value > 180 ? -180 - 180 + value : value;
+    }
     public Vector2 xRotationLimit = new Vector2(-180f,180f);
     public Vector2 yRotationLimit = new Vector2(-180f,180f);
 
@@ -23,7 +37,8 @@ public class InspectObject : MonoBehaviour
     {
         ink = GameObject.FindGameObjectWithTag("CanvasInspect");
         ink.gameObject.SetActive(false);
-        
+        x = transform.localRotation.x;
+        y = transform.localRotation.y;
         _camera = GetComponent<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -86,11 +101,12 @@ public class InspectObject : MonoBehaviour
             
             
             xRotation -= mouseY;
+            Debug.Log(y);
             yRotation += mouseX;
            
-            xRotation = Mathf.Clamp(xRotation, xRotationLimit.x, xRotationLimit.y);   
+            //xRotation = Mathf.Clamp(xRotation, xRotationLimit.x, xRotationLimit.y);   
             
-             yRotation = Mathf.Clamp(yRotation, yRotationLimit.x, yRotationLimit.y);   
+            //yRotation = Mathf.Clamp(yRotation, yRotationLimit.x, yRotationLimit.y);   
             
             Debug.Log(yRotation);
             
