@@ -26,7 +26,7 @@ public class gameManager : MonoBehaviour
     
     private void Update()
     {
-        if( Health ==0)
+        if( Health <=0)
         {
             GetComponent<MainMenu>().LoseButton();
         }
