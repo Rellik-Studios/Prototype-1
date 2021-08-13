@@ -9275,7 +9275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 205695604, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: text
-      value: There is fingerprints
+      value: There are fingerprints on the glass
       objectReference: {fileID: 0}
     - target: {fileID: 205695604, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: cursorHover
@@ -9315,6 +9315,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 428626189, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491115260, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 532316199, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
@@ -12705,7 +12709,7 @@ BoxCollider:
   m_GameObject: {fileID: 1982132535}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.07014803, y: 0.043842018, z: 0.45384008}
   m_Center: {x: -2.3245628e-11, y: 0.00000017881393, z: -0.0007795171}
@@ -12716,7 +12720,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982132535}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd27682cd1367544a7e945a03f0c309, type: 3}
   m_Name: 
