@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -46,9 +47,14 @@ public class inspectAndAppend : MonoBehaviour
         yield return new WaitForEndOfFrame();
         var currentText = ink.transform.GetChild(2).GetComponent<TMP_Text>().text;
         ink.transform.GetChild(2).GetComponent<TMP_Text>().text = text;
+        GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(3);
         ink.transform.GetChild(2).GetComponent<TMP_Text>().text = currentText;
         ink.transform.GetChild(0).gameObject.SetActive(false);
+        GetComponent<BoxCollider>().enabled = true;
+        //my solution down below
+        //Destroy(gameObject.GetComponent<BoxCollider>());
+
         //if (append is { }) Destroy(this.gameObject);
     }
 }
