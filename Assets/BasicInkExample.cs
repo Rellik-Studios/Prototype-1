@@ -195,7 +195,7 @@ public class BasicInkExample : MonoBehaviour
 					transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale = new Vector3(textDialogueSize * -1, localScale.y,localScale.z);
 					var scale = transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale;
 					transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale =
-						new Vector3(-0.1f, scale.y, scale.z);
+						new Vector3(-0.12f, scale.y, scale.z);
 				}
 				else
 				{
@@ -203,7 +203,7 @@ public class BasicInkExample : MonoBehaviour
 					transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale = new Vector3(textDialogueSize, localScale.y,localScale.z);
 					var scale = transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale;
 					transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale =
-						new Vector3(0.1f, scale.y, scale.z);
+						new Vector3(0.12f, scale.y, scale.z);
 
 				}
 				Debug.Log(m_characterText.text);

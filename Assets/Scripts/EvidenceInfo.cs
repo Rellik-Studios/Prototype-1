@@ -51,6 +51,13 @@ public class EvidenceInfo : MonoBehaviour
             }
             pointer = _append;
         }
+        else
+        {
+            if(gameManager.Instance.soundEffects.TryGetValue("buttonsound", out AudioClip clip))
+            {
+                gameManager.Instance.audioSource.PlayOneShot(clip);
+            }
+        }
     }
    
 
