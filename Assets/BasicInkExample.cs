@@ -12,6 +12,8 @@ using Object = UnityEngine.Object;
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour
 {
+	private float textDialogueSize;
+	
 	[FormerlySerializedAs("tick")] public bool m_tick;
 	public static event Action<Story> OnCreateStory;
 
@@ -79,6 +81,7 @@ public class BasicInkExample : MonoBehaviour
 
 	void OnEnable()
 	{
+		textDialogueSize = transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale.x;
 		AddToDictionary<AudioClip>(m_clips, "Sounds");
 		AddToDictionary(m_emotions, "Emotions");
 		canProceed = true;
@@ -181,7 +184,28 @@ public class BasicInkExample : MonoBehaviour
 		{
 			if (tag.StartsWith("Character."))
 			{
-				m_characterText.text = tag.Substring("Character.".Length, tag.Length - "Character.".Length);
+				
+				var charName = tag.Substring("Character.".Length, tag.Length - "Character.".Length);
+				var localScale = transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale;
+				m_characterText.text = charName;
+
+				if (charName == "Rook")
+				{
+					var parentScale = transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale;
+					transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale = new Vector3(textDialogueSize * -1, localScale.y,localScale.z);
+					var scale = transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale;
+					transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale =
+						new Vector3(-0.12f, scale.y, scale.z);
+				}
+				else
+				{
+					var parentScale = transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale;
+					transform.parent.GetChild(0).GetChild(1).GetComponent<RectTransform>().localScale = new Vector3(textDialogueSize, localScale.y,localScale.z);
+					var scale = transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale;
+					transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<RectTransform>().localScale =
+						new Vector3(0.12f, scale.y, scale.z);
+
+				}
 				Debug.Log(m_characterText.text);
 			}
 
@@ -274,7 +298,7 @@ public class BasicInkExample : MonoBehaviour
 				isTag = false;
 
 			if (!isTag)
-				yield return null;
+				yield return new WaitForSeconds(0.0167f);
 		}
 
 		yield return new WaitForSeconds(3f);
