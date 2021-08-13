@@ -353,7 +353,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-305136
+  m_Name: pb_Mesh-336874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 26.908958, y: 0, z: 22.844326, w: 0}
+  m_margin: {x: 30.498821, y: 0, z: 27.511154, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 21.405323, y: 0, z: 20.008698, w: 0}
+  m_margin: {x: 27.508148, y: 0, z: 28.62442, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1789,7 +1789,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-305124
+  m_Name: pb_Mesh-336862
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2270,7 +2270,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 24.23676, y: 0, z: 23.438698, w: 0}
+  m_margin: {x: 28.349041, y: 0, z: 27.82513, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2301,7 +2301,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-304692
+  m_Name: pb_Mesh-336430
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4455,7 +4455,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-304648
+  m_Name: pb_Mesh-336386
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5912,7 +5912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.x
-      value: -306.236
+      value: -338.07803
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.y
@@ -5920,7 +5920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.z
-      value: -937.9758
+      value: -984.2915
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_fontAsset
@@ -6034,7 +6034,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-304660
+  m_Name: pb_Mesh-336398
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6860,7 +6860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.w
-      value: -46.55191
+      value: -55.236053
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.x
@@ -6868,7 +6868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.y
-      value: 70.08777
+      value: 58.50885
       objectReference: {fileID: 0}
     - target: {fileID: 1489440970127447853, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_margin.z
@@ -6960,11 +6960,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3281830026549719721, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1787
+      value: 1819
       objectReference: {fileID: 0}
     - target: {fileID: 3281830026549719721, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -438
+      value: -417
       objectReference: {fileID: 0}
     - target: {fileID: 3281830026549719721, guid: 8bc19a9db2b41a640a7aba403ed77cd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7749,7 +7749,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-305112
+  m_Name: pb_Mesh-336850
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12035,7 +12035,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 26.29301, y: 0, z: 24.145641, w: 0}
+  m_margin: {x: 31.318836, y: 0, z: 28.812492, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13209,14 +13209,14 @@ RectTransform:
   m_GameObject: {fileID: 2129760553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 22.028, y: 22.028, z: 22.028}
+  m_LocalScale: {x: 17.564482, y: 16.339052, z: 16.339052}
   m_Children: []
   m_Father: {fileID: 1601182506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00061035156, y: 28}
+  m_AnchoredPosition: {x: 0.00061035156, y: -157}
   m_SizeDelta: {x: 87.162, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129760555
@@ -13239,7 +13239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 716c8cddb00d54e41af009655e6f8adb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 362edc47aa7c0f94b9659e8232e48df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
