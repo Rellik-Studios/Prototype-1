@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class gameManager : MonoBehaviour
 {
@@ -15,13 +17,36 @@ public class gameManager : MonoBehaviour
     [SerializeField] private BasicInkExample ink;
 
     [SerializeField] private TextAsset story;
+    
+    public Dictionary<string, AudioClip> soundEffects { get; private set; }
 
+    public AudioSource audioSource;
+
+    void AddToDictionary<T>(Dictionary<string, T> _dictionary, string _path) where T : Object
+    {
+        var array = Resources.LoadAll<T>(_path);
+        var list = array.ToList();
+
+        if (_dictionary.Count == 0)
+            foreach (var li in list)
+            {
+                _dictionary.Add(li.name.ToLower(), li);
+            }
+    }
     
     public void StartStory(TextAsset _story)
     {
         ink.m_inkJsonAsset = _story; 
         sceneController.SetActive(true);
        
+    }
+
+    public void playButtonSound()
+    {
+        if(soundEffects.TryGetValue("buttonsound", out AudioClip clip))
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
     
     private void Update()
@@ -58,13 +83,14 @@ public class gameManager : MonoBehaviour
 
     private void Start()
     {
-        
     }
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         inkDialogeCanvas = GameObject.FindGameObjectWithTag("InkDialogue");
-
+        soundEffects = new Dictionary<string, AudioClip>();
+        AddToDictionary(soundEffects, "Effects");
         Instance = this;
         collectedEvidences = new Dictionary<string, EvidenceInfo>();
 
@@ -93,6 +119,12 @@ public class gameManager : MonoBehaviour
     {
         if (!collectedEvidences.ContainsKey(_evidence.evidenceName.ToLower().Replace(" ", "")))
         {
+            if(soundEffects.TryGetValue("evidencepickup", out AudioClip clip))
+            {
+                audioSource.PlayOneShot(clip);
+            }
+            GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Image>().enabled = true;
+            GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", true);
             collectedEvidences.Add(_evidence.evidenceName.ToLower().Replace(" ", ""), _evidence);
             inkDialogeCanvas.transform.parent.gameObject.SetActive(true);
             inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(false);
@@ -105,8 +137,10 @@ public class gameManager : MonoBehaviour
     {
         var currentText = inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text;
         inkDialogeCanvas.transform.GetChild(0).GetComponent<Image>().enabled = false;
-        inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " clue has been added to the inventory";
-        yield return new WaitForSeconds(3);
+        inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = evidenceName + " Has been added to the inventory";
+        yield return new WaitForSeconds(1);
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", false);
+        yield return new WaitForSeconds(2);
         inkDialogeCanvas.transform.GetChild(3).GetComponent<TMP_Text>().text = currentText;
         inkDialogeCanvas.transform.parent.gameObject.SetActive(false);
         inkDialogeCanvas.transform.parent.GetChild(1).gameObject.SetActive(true);
@@ -119,6 +153,10 @@ public class gameManager : MonoBehaviour
             if (evidence.Value == _evidence)
             {
                 evidence.Value.pointer++;
+                if(soundEffects.TryGetValue("evidencepickup", out AudioClip clip))
+                {
+                    audioSource.PlayOneShot(clip);
+                }
             }
         }
     }
@@ -148,6 +186,7 @@ public class gameManager : MonoBehaviour
 
     IEnumerator addToInventory(string obect)
     {
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Image>().enabled = true;
         var evidences = GameObject.FindObjectsOfType<EvidenceInfo>();
           foreach (var evidence in evidences)
         {
@@ -174,6 +213,10 @@ public class gameManager : MonoBehaviour
                     if (itEvidence.Value.pointer < intAppend - 1)
                     {
                         itEvidence.Value.pointer = intAppend - 1;
+                        if(soundEffects.TryGetValue("evidencepickup", out AudioClip clip))
+                        {
+                            audioSource.PlayOneShot(clip);
+                        }
                     }
                 }
             }

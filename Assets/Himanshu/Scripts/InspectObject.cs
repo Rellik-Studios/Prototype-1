@@ -64,13 +64,13 @@ public class InspectObject : MonoBehaviour
                 
                 else if (objectToInspect.ToLower().Replace(" ", "") == "rippedphoto")
                 {
-                    xRotationLimit = new Vector2(-180f, 0f);
-                    yRotationLimit = new Vector2(-90f, 90f);
+                    xRotationLimit = new Vector2(-145f, -45f);
+                    yRotationLimit = new Vector2(-60f, 60f);
                 }
                 else
                 {
-                    xRotationLimit = new Vector2(-180f, 180f);
-                    yRotationLimit = new Vector2(-180f, 180f);
+                    xRotationLimit = new Vector2(-181f, 181f);
+                    yRotationLimit = new Vector2(-181f, 181f);
                 }
             }
         }
@@ -104,9 +104,9 @@ public class InspectObject : MonoBehaviour
             Debug.Log(y);
             yRotation += mouseX;
            
-            //xRotation = Mathf.Clamp(xRotation, xRotationLimit.x, xRotationLimit.y);   
+            xRotation = Mathf.Clamp(xRotation, xRotationLimit.x, xRotationLimit.y);   
             
-            //yRotation = Mathf.Clamp(yRotation, yRotationLimit.x, yRotationLimit.y);   
+            yRotation = Mathf.Clamp(yRotation, yRotationLimit.x, yRotationLimit.y);   
             
             Debug.Log(yRotation);
             
