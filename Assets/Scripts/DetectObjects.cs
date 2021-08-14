@@ -48,6 +48,7 @@ public class DetectObjects : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
+                        Cursor.SetCursor(mouseDefault, Vector2.zero, CursorMode.Auto);
                         gameManager.Instance.addEvidence(evidence);
                         if(m_revert != null)
                             for (var index = 0; index < m_revert.materials.Length; index++)
