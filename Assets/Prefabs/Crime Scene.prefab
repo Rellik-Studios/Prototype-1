@@ -1498,6 +1498,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4603071500824727152
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683713881385380185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4068373912626513877, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
 --- !u!114 &2588644365188364739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,20 +1536,6 @@ MonoBehaviour:
   Inspected: 0
   InspectVisible: 0
   SampleVisible: 0
---- !u!64 &4603071500824727152
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683713881385380185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4068373912626513877, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
 --- !u!1 &1896085310323388591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,8 +1911,8 @@ GameObject:
   - component: {fileID: 2200005416320660340}
   - component: {fileID: 2200005416320660341}
   - component: {fileID: 4293579263087783081}
-  m_Layer: 6
-  m_Name: Missing Item
+  m_Layer: 0
+  m_Name: Dresser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11025,6 +11025,14 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
+      propertyPath: m_Name
+      value: Missing Item
+      objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -6067185528594298527, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
       propertyPath: m_Materials.Array.data[0]
