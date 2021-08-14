@@ -16,6 +16,10 @@ public class InventorySystem : MonoBehaviour
     public GameObject InventoryUI;
     public GameObject showUI;
 
+    public bool isInventoryOpen
+    {
+        get => IsInvenOpen || IsShowOpen;
+    }
     //testing
     
     public GameObject SuspectScreen;
@@ -88,6 +92,8 @@ public class InventorySystem : MonoBehaviour
     }
     public void OpenInventUI()
     {
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("Exclamation").GetComponent<Animator>().SetBool("Trigger", false);
         IsInvenOpen = !IsInvenOpen;
         InventoryUI.SetActive(IsInvenOpen);
 

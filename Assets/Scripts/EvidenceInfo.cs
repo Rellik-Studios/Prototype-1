@@ -43,8 +43,21 @@ public class EvidenceInfo : MonoBehaviour
 
     public void ModifyAppend(int _append)
     {
-        if(_append > pointer)
+        if (_append > pointer)
+        {
+            if(gameManager.Instance.soundEffects.TryGetValue("evidencepickup", out AudioClip clip))
+            {
+                gameManager.Instance.audioSource.PlayOneShot(clip);
+            }
             pointer = _append;
+        }
+        else
+        {
+            if(gameManager.Instance.soundEffects.TryGetValue("button", out AudioClip clip))
+            {
+                gameManager.Instance.audioSource.PlayOneShot(clip);
+            }
+        }
     }
    
 
