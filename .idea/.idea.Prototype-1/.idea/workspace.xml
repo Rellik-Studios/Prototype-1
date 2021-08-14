@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4a7d29d-406c-4a61-b435-c6be08b56028" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototype-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ink/Demos/Basic Demo.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MainRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainRoom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Master.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Master.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Rachael/LoseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/LoseScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Rachael/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Rachael/WinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rachael/WinScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/gameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/gameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +47,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SuspectsStories.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EvidenceInfo.cs" />
-      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InventorySystem.cs" />
       <option value="$PROJECT_DIR$/Assets/cameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/gameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Himanshu/Scripts/InspectObject.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vxlZUR8AIaw3PctewWHFPbvpSg" />
@@ -128,7 +117,7 @@
       <workItem from="1628468877400" duration="8443000" />
       <workItem from="1628555016446" duration="1835000" />
       <workItem from="1628640424167" duration="7015000" />
-      <workItem from="1628686672600" duration="7373000" />
+      <workItem from="1628686672600" duration="8138000" />
     </task>
     <servers />
   </component>
@@ -170,13 +159,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
-          <line>266</line>
+          <line>268</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="148" containingFunctionPresentation="method 'show'" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/gameManager.cs</url>
-          <line>239</line>
+          <line>241</line>
           <properties documentPath="D:\Repos\Prototype-1\Assets\gameManager.cs" initialLine="137" containingFunctionPresentation="method 'modify'" />
           <option name="timeStamp" value="53" />
         </line-breakpoint>

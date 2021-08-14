@@ -81,4 +81,10 @@ public class cameraController : MonoBehaviour
         yield return new WaitForSeconds(timer);
         canSwitch = true;
     }
+    
+    public void playClip(AudioClip _clip)
+    {
+        GetComponent<AudioSource>().clip = _clip;
+        GetComponent<AudioSource>().Play();
+    }
 }
