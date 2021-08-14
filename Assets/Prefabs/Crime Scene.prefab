@@ -1498,6 +1498,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2588644365188364739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683713881385380185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd27682cd1367544a7e945a03f0c309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evidenceName: Missing Item
+  descriptions:
+  - "There appears to be a missing object on the surface of the desk\u2026"
+  - "There appears to be a missing object on the surface of the desk. The maid recalls
+    it being a \u201Cpretty little box\u201D with gold details."
+  - "There appears to be a missing object on the surface of the desk. The maid recalls
+    it being a \u201Cpretty little box\u201D with gold details. It appears in the
+    photo of the Duke as a little boy."
+  pointer: 0
+  Inspected: 0
+  InspectVisible: 0
+  SampleVisible: 0
+--- !u!64 &4603071500824727152
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683713881385380185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4068373912626513877, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
 --- !u!1 &1896085310323388591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,8 +1910,7 @@ GameObject:
   - component: {fileID: 2200005416320660342}
   - component: {fileID: 2200005416320660340}
   - component: {fileID: 2200005416320660341}
-  - component: {fileID: 6634559714936520576}
-  - component: {fileID: 4066358850918851355}
+  - component: {fileID: 4293579263087783081}
   m_Layer: 6
   m_Name: Missing Item
   m_TagString: Untagged
@@ -1944,32 +1981,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6634559714936520576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2200005416320660343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd27682cd1367544a7e945a03f0c309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evidenceName: Missing Item
-  descriptions:
-  - "There appears to be a missing object on the surface of the desk\u2026"
-  - "There appears to be a missing object on the surface of the desk. The maid recalls
-    it being a \u201Cpretty little box\u201D with gold details."
-  - "There appears to be a missing object on the surface of the desk. The maid recalls
-    it being a \u201Cpretty little box\u201D with gold details. It appears in the
-    photo of the Duke as a little boy."
-  pointer: 0
-  Inspected: 0
-  InspectVisible: 0
-  SampleVisible: 0
---- !u!65 &4066358850918851355
-BoxCollider:
+--- !u!64 &4293579263087783081
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1978,9 +1991,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.6110377, y: 4.809172, z: 7.688271}
-  m_Center: {x: -2.1994338, y: -2.5946908, z: 1.15326}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7510287424243500849, guid: f6d62a33b1cdfc7428a323acf212bc87, type: 3}
 --- !u!1 &2200005416431391209
 GameObject:
   m_ObjectHideFlags: 0
@@ -11022,6 +11036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
+--- !u!1 &1683713881385380185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
+  m_PrefabInstance: {fileID: 2200005416933608458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1805174033944030177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c91e978eefd9c2a4294f94752d2d7491, type: 3}
@@ -14350,14 +14369,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbcbade7c62e3514dbfa6276d802e8bb, type: 3}
---- !u!4 &3339645356243478870 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dbcbade7c62e3514dbfa6276d802e8bb, type: 3}
-  m_PrefabInstance: {fileID: 3013599454152462013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3440998871806441792 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8785794435765274627, guid: dbcbade7c62e3514dbfa6276d802e8bb, type: 3}
+  m_PrefabInstance: {fileID: 3013599454152462013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3339645356243478870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dbcbade7c62e3514dbfa6276d802e8bb, type: 3}
   m_PrefabInstance: {fileID: 3013599454152462013}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3128784172103320698
@@ -14441,14 +14460,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
---- !u!1 &2858314003734100267 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
-  m_PrefabInstance: {fileID: 3128784172103320698}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3233890050045911953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
+  m_PrefabInstance: {fileID: 3128784172103320698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2858314003734100267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
   m_PrefabInstance: {fileID: 3128784172103320698}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3661178294865532609
@@ -15008,14 +15027,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
---- !u!4 &6465411877332739256 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
-  m_PrefabInstance: {fileID: 6787901716088947539}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5976858847429672450 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
+  m_PrefabInstance: {fileID: 6787901716088947539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6465411877332739256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b25a0a41cca1af44a8aa01f2a782d9ba, type: 3}
   m_PrefabInstance: {fileID: 6787901716088947539}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7210345087824937442
@@ -15566,14 +15585,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
---- !u!4 &8744362002200202808 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
-  m_PrefabInstance: {fileID: 9137961510527330771}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8577864204104600704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
+  m_PrefabInstance: {fileID: 9137961510527330771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8744362002200202808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e29c6032076976459b42f67dfd31c4e, type: 3}
   m_PrefabInstance: {fileID: 9137961510527330771}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9139112620356057984
@@ -15653,14 +15672,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
---- !u!4 &8745462696480201835 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
-  m_PrefabInstance: {fileID: 9139112620356057984}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8220704638254548689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
+  m_PrefabInstance: {fileID: 9139112620356057984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8745462696480201835 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970cc3d9589551142a4dfce169af0c84, type: 3}
   m_PrefabInstance: {fileID: 9139112620356057984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9139120937193651703
