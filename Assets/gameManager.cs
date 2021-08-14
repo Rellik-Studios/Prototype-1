@@ -176,6 +176,8 @@ public class gameManager : MonoBehaviour
     }
 
 
+    
+    
     IEnumerator addToInventory(string obect)
     {
         if(soundEffects.TryGetValue("evidencepickup", out AudioClip clip))
