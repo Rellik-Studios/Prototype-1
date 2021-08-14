@@ -291,6 +291,7 @@ public class BasicInkExample : MonoBehaviour
 		bool isTag = false;
 		foreach (var letter in text)
 		{
+			
 			m_textBox.text += letter;
 			if (letter == '<')
 				isTag = true;
@@ -298,7 +299,12 @@ public class BasicInkExample : MonoBehaviour
 				isTag = false;
 
 			if (!isTag)
+			{
+				m_clips.TryGetValue("text", out AudioClip clip);
+				if(!m_audioSource.isPlaying)
+					m_audioSource.PlayOneShot(clip);
 				yield return new WaitForSeconds(0.0167f);
+			}
 		}
 
 		yield return new WaitForSeconds(3f);
