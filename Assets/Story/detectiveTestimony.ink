@@ -1,6 +1,6 @@
 ->Question_1
 === Question_1 ===
--Hello I am Sen, your senior officer, your Senior and your mentor for this investigation. #Character.Sen #Emotion.sen_neutral
+-Hello I am Sen, Senior Officer and your mentor for this investigation. #Character.Sen #Emotion.sen_neutral
     *[About you] Could you tell me a bit about yourself? #Character.Rook
                 I've been a detective for 20 years. I have a flawless record with the cases I solve, I am NEVER wrong. #Character.Sen #Emotion.sen_snarky
                 ->Question_1
