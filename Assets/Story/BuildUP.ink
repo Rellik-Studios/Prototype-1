@@ -8,7 +8,7 @@ We know one important thing about the killer... #Character.Rook #Emotion.null
         His dad mentioned a "him". #Character.Rook
     ->Question_2
     +They are a female #Character.Rook
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_1
     ->DONE
     
@@ -16,10 +16,10 @@ We know one important thing about the killer... #Character.Rook #Emotion.null
 
 A clue that could help us identify the killer was in the room... #Character. 
     +Bottle #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_2
     +Tipped over glass #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_2
     +[Standing glass] #Character.Rook #Skip.2
         There was someone else in the room, the glass was the kiler's. #Character.Rook
@@ -29,7 +29,7 @@ A clue that could help us identify the killer was in the room... #Character.
     === Question_3 ===
 The standing glass has... #Character. 
     +Fingerprints #Character.Rook
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_3
     +[No fingerprints] #Character.Rook #Skip.2
         The glass with no fingerprints must be the killer's. #Character.Rook
@@ -54,10 +54,10 @@ One important clue that narrows the pool of suspects was...#Character.
         === Question_5 ===
 There was someone else close to the Duke... #Character. 
     +Wine Bottle #Character.Rook
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_5
     +Newspaper Article #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_5
     +[Torn Photo]  #Character.Rook #Skip.2
         As you can see, someone tampered with the crimescene, trying to erase their presence in the Duke's life. #Character.Rook
@@ -70,10 +70,10 @@ There was someone else close to the Duke... #Character.
     === Question_6 ===
 During my investigation I noticed something was off... #Character. 
     +The pills #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_6
     +The duke's body #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_6
     +[Cause of death] #Character.Rook #Skip.2
         I believe the stab is not what killed the Duke. #Character.Rook
@@ -84,10 +84,10 @@ During my investigation I noticed something was off... #Character.
     === Question_7 ===
 What really killed him was... #Character. 
     +Bottle #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_7
     +Wine Standing #Character.Rook 
-    Waits thats wrong #Character.Rook #Interaction.Hurt #Skip.2
+    Wait that's wrong #Character.Rook #Interaction.Hurt #Skip.2
     ->Question_7
     +[Wine tipped] #Skip.2
         We found traces of poison when we sampled the tipped glass! #Character.Rook
