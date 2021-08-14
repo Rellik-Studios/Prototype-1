@@ -5527,6 +5527,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1554256903332800772, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01b6f81472a81244b8f118a2790b0c4e, type: 2}
     - target: {fileID: 1634626212945900796, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
       propertyPath: m_Name
       value: Crime Scene
@@ -5603,6 +5607,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b2c4343850e398745a2c33dc0365f715, type: 2}
+    - target: {fileID: 2350800884844797566, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01b6f81472a81244b8f118a2790b0c4e, type: 2}
     - target: {fileID: 3048111105970023685, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5663,6 +5671,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 138007992}
+    - target: {fileID: 7572023992477917555, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01b6f81472a81244b8f118a2790b0c4e, type: 2}
     - target: {fileID: 7854287059560858706, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5679,6 +5691,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8741575163545200890, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01b6f81472a81244b8f118a2790b0c4e, type: 2}
     - target: {fileID: 8745462696480201835, guid: 21f5fb1d26a1e1c45b8114a4d4cd6df1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5941,7 +5957,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01b6f81472a81244b8f118a2790b0c4e, type: 2}
+  - {fileID: 2100000, guid: 4d946f19cbee75041b922ac3f0f99b8d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5963,7 +5979,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7cd938fbd0191cf49b4b440e9d58bd31, type: 3}
-  m_Color: {r: 0.48627454, g: 0.67058825, b: 0.9450981, a: 0.654902}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.654902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9388,7 +9404,7 @@ PrefabInstance:
     - target: {fileID: 1446993523, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100002, guid: 47616bd0cda748d4cbedcfc908506b9d, type: 3}
+      objectReference: {fileID: 2100000, guid: 4d946f19cbee75041b922ac3f0f99b8d, type: 2}
     - target: {fileID: 1446993523, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
