@@ -7,7 +7,8 @@ VAR done = 0
 === Stuff ===
 knife2 #Function.setknife
 rippedphoto2 #Function.setrippedphoto
--What is it you want? #Character.Brother #Emotion.brother_neutral
+-I'm the Duke's brother. #Character.Brother #Emotion.brother_neutral
+What is it you want? #Character.Brother #Emotion.brother_neutral
 
     *[Night of the murder] Could you tell me what happened at the night of the murder? #Character.Rook
                             Want my alibi? Unfortunately I was home last night.#Character.Brother #Emotion.brother_neutral
