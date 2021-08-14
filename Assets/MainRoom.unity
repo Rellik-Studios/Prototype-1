@@ -9465,7 +9465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: text
-      value: These pills are for cancer treatment
+      value: These pills are for the treatment of terminal illness
       objectReference: {fileID: 0}
     - target: {fileID: 963372437, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: cursorHover
@@ -9481,7 +9481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1271122065, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: text
-      value: Photo ripped in half, a box can be seen wit golden patterns
+      value: A child is holding a box with golden details
       objectReference: {fileID: 0}
     - target: {fileID: 1271122065, guid: 021dbac1cc7432f4cafe644eb01b3f71, type: 3}
       propertyPath: cursorHover

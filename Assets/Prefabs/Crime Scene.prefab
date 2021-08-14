@@ -5011,10 +5011,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evidenceName: Pills
   descriptions:
-  - "A bottle of pills, for the treatment of chronic illness. It says \u2018Take
+  - "A bottle of pills, for the treatment of terminal illness. It says \u2018Take
     once a day\u2019\r\n\n"
-  - "A bottle of pills, for the treatment of chronic illness. It says \u2018Take
-    once a day\u2019\r.The Duke was suffering from a chronic illness and had a few
+  - "A bottle of pills, for the treatment of terminal illness. It says \u2018Take
+    once a day\u2019\r.The Duke was suffering from a terminal illness and had a few
     years left to live.\n\n"
   pointer: 0
   Inspected: 0
