@@ -13,4 +13,5 @@
                         The victim was stabbed with a knife. The knife was plunged straight into the heart. #Character.Sen #Emotion.sen_explaining
                         I am certain that is the cause of death. #Character.Sen #Emotion.sen_snarky 
                         I see. #Character.Rook
+                        blah #Character.Sen
 ->END            

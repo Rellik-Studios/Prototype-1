@@ -82,6 +82,14 @@ public class DetectObjects : MonoBehaviour
                 }
                 else if (hit.collider.TryGetComponent<SuspectsStories>(out SuspectsStories suspects))
                 {
+                    Cursor.SetCursor(mouseDefault, Vector2.zero, CursorMode.Auto);
+                    if (m_revert != null && defaultColor != null)
+                        for (var index = 0; index < m_revert.materials.Length; index++)
+                        {
+                            var mat = m_revert.materials[index];
+                            mat.color = defaultColor[index];
+                        }
+                    
                     if (Input.GetMouseButtonDown(0))
                     {
                         gameManager.Instance.StartStory(suspects.GetStory());

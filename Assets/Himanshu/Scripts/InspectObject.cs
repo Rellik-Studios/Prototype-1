@@ -15,6 +15,8 @@ public class InspectObject : MonoBehaviour
     public bool isInspecting = false;
     private float x;
 
+    private float z;
+
     private float xRotation
     {
         get => x;
@@ -38,8 +40,7 @@ public class InspectObject : MonoBehaviour
     {
         ink = GameObject.FindGameObjectWithTag("CanvasInspect");
         ink.gameObject.SetActive(false);
-        x = transform.localRotation.x;
-        y = transform.localRotation.y;
+        
         _camera = GetComponent<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -74,6 +75,10 @@ public class InspectObject : MonoBehaviour
                     xRotationLimit = new Vector2(-181f, 181f);
                     yRotationLimit = new Vector2(-181f, 181f);
                 }
+                
+                x = inspecting.transform.localRotation.eulerAngles.x;
+                y = inspecting.transform.localRotation.eulerAngles.y;
+                z = inspecting.transform.localRotation.eulerAngles.z;
             }
         }
     }
@@ -113,7 +118,7 @@ public class InspectObject : MonoBehaviour
             
             Debug.Log(yRotation);
             
-            inspecting.transform.localRotation = (Quaternion.Euler(xRotation, yRotation, 0f));
+            inspecting.transform.localRotation = (Quaternion.Euler(xRotation, yRotation,0f));
         }
         else
         {
